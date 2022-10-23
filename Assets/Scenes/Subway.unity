@@ -1619,6 +1619,7 @@ GameObject:
   - component: {fileID: 1233870105}
   - component: {fileID: 1233870106}
   - component: {fileID: 1233870107}
+  - component: {fileID: 1233870108}
   m_Layer: 0
   m_Name: Player
   m_TagString: Untagged
@@ -1686,12 +1687,26 @@ MonoBehaviour:
     serializedVersion: 2
     m_Bits: 64
   isGrounded: 0
+--- !u!114 &1233870108
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1233870104}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c6076349f5ba68e42a691529ca18b437, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
   interacting_object: {fileID: 0}
   Interactable_Layer:
     serializedVersion: 2
     m_Bits: 128
   outline: {fileID: 2100000, guid: 7cce37a684101b14a9ad7b746f5f95e2, type: 2}
   Default_noOutline: {fileID: 0}
+  rayhitdistance: 7
+  crosshair_txt: {fileID: 1940847678}
 --- !u!136 &1245337062
 CapsuleCollider:
   m_ObjectHideFlags: 0
