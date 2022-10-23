@@ -38,6 +38,7 @@ public class RayCastFPS : MonoBehaviour
         {
             interacting_object.GetComponent<Renderer>().sharedMaterial = Default_noOutline;
             noOutline_tex = null;
+            outline.SetTexture("_Texture2D", null);
             Default_noOutline = null;
             interacting_object = null;
         }
