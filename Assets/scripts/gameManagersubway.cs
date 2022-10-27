@@ -79,8 +79,9 @@ public class gameManagersubway : MonoBehaviour
         else
         {
             endScreen.SetActive(false);
-            if (timer >= timer_up && !debug)
+            if (timer >= timer_up)
             {
+                Debug.Log("Test");
                 timeLoop();
             }
             else
@@ -93,6 +94,7 @@ public class gameManagersubway : MonoBehaviour
     void timeLoop()
     {
         initiatedLoop = true;
-        SceneManager.LoadScene("Subway", LoadSceneMode.Single);
+        //reset player position
+        //SceneManager.LoadScene("EnvironmentScene", LoadSceneMode.Single);
     }
 }
