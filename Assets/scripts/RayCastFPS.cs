@@ -5,7 +5,7 @@ using TMPro;
 
 public class RayCastFPS : MonoBehaviour
 {
-    public GameObject interacting_object = null;
+    public static GameObject interacting_object = null;
     public LayerMask Interactable_Layer;
 
     public Material outline;
@@ -18,6 +18,10 @@ public class RayCastFPS : MonoBehaviour
 
     private void Update()
     {
+        //debug
+        Debug.DrawRay(transform.position, transform.forward * 7, Color.green);
+
+        //actual code
         ray = new Ray(this.transform.position, this.transform.forward);
         RaycastHit hit;
 
