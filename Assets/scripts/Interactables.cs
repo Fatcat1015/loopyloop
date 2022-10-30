@@ -21,24 +21,24 @@ public class Interactables : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        if (RayCastFPS.interacting_object != null)
+        if (RayCastFPS.description_object != null)
         {
+           
             if (RayCastFPS.description_object.gameObject.name == "Newspaper")
             {
                 Debug.Log("News");
                 index = 0;
-                descriptions.text = string.Empty;
                 StartCoroutine(TypeLine());
             }
             if (RayCastFPS.description_object.gameObject.name == "Loose Light")
             {
                 index = 1;
-                descriptions.text = string.Empty;
                 StartCoroutine(TypeLine());
             }
         }
         else
         {
+            descriptions.text = string.Empty;
             //dialogueBox.SetActive(false);
             this.gameObject.SetActive(false);
         }
