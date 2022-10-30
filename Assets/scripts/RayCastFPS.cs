@@ -5,8 +5,12 @@ using TMPro;
 
 public class RayCastFPS : MonoBehaviour
 {
+    [SerializeField]
     public static GameObject interacting_object = null;
+    [SerializeField]
+    public static GameObject description_object = null;
     public LayerMask Interactable_Layer;
+    public LayerMask discriptionOnly_Layer;
 
     public Material outline;
     public Material Default_noOutline;
@@ -25,6 +29,7 @@ public class RayCastFPS : MonoBehaviour
         ray = new Ray(this.transform.position, this.transform.forward);
         RaycastHit hit;
 
+        //interactable obj
         if (Physics.Raycast(ray, out hit, rayhitdistance, Interactable_Layer))
         {
             interacting_object = hit.transform.gameObject;
@@ -33,11 +38,9 @@ public class RayCastFPS : MonoBehaviour
                 Default_noOutline = interacting_object.GetComponent<Renderer>().sharedMaterial;
                 noOutline_tex = Default_noOutline.mainTexture;
             }
-            if(noOutline_tex != null)outline.SetTexture("_Texture2D", noOutline_tex);
+            if (noOutline_tex != null) outline.SetTexture("_Texture2D", noOutline_tex);
             interacting_object.GetComponent<Renderer>().sharedMaterial = outline;
         }
-
-
         else if (interacting_object != null)
         {
             interacting_object.GetComponent<Renderer>().sharedMaterial = Default_noOutline;
@@ -45,6 +48,11 @@ public class RayCastFPS : MonoBehaviour
             outline.SetTexture("_Texture2D", null);
             Default_noOutline = null;
             interacting_object = null;
+        }
+        //description obj
+        else if (Physics.Raycast(ray, out hit, rayhitdistance, discriptionOnly_Layer))
+        {
+            description_object = hit.transform.gameObject;
         }
 
         if (interacting_object != null)
@@ -56,5 +64,4 @@ public class RayCastFPS : MonoBehaviour
             crosshair_txt.text = "";
         }
     }
-
 }
