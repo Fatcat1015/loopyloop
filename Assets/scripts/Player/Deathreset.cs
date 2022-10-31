@@ -8,16 +8,6 @@ public class Deathreset : MonoBehaviour
     public GameObject blackscreen;
 
     public static int deathTime = 0;
-    void Start()
-    {
-        
-    }
-
-    // Update is called once per frame
-    void Update()
-    {
-        
-    }
 
     private void OnTriggerEnter(Collider other)
     {

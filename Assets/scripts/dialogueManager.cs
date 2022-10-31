@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using UnityEngine;
 using TMPro;
 
-public class dialogue : MonoBehaviour
+public class dialogueManager : MonoBehaviour
 {
     public TextMeshProUGUI sentences;
     [TextArea(3, 10)]

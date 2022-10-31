@@ -14,6 +14,9 @@ public class gameManagersubway : MonoBehaviour
 
     public PlayerMovementFPS playermove;
 
+    private string displayMinutes = "";
+    private string  displaySeconds = "";
+
     //public GameObject endScreen;
     public TMP_Text timer_UI;
 
@@ -39,7 +42,28 @@ public class gameManagersubway : MonoBehaviour
 
     void Update()
     {
-        timer_UI.text = Mathf.Round(timer).ToString();
+        //convert timer to clock format
+        if(timer/60 < 10)
+        {
+            displayMinutes = "0" + Mathf.FloorToInt(timer / 60).ToString();
+        }
+        else
+        {
+            displayMinutes = Mathf.FloorToInt(timer / 60).ToString();
+        }
+
+        if (timer % 60 < 10)
+        {
+            displaySeconds = "0" + Mathf.RoundToInt(timer).ToString();
+        }
+        else
+        {
+            displaySeconds = Mathf.RoundToInt(timer % 60).ToString();
+        }
+
+        //display clock
+
+        timer_UI.text = "12:" + displayMinutes+ ":" +  displaySeconds;
 
         if (playermove == null)
         {
@@ -81,7 +105,6 @@ public class gameManagersubway : MonoBehaviour
             //endScreen.SetActive(false);
             if (timer >= timer_up)
             {
-                Debug.Log("Test");
                 timeLoop();
             }
             else

@@ -38,7 +38,7 @@ RenderSettings:
   m_ReflectionIntensity: 1
   m_CustomReflection: {fileID: 0}
   m_Sun: {fileID: 0}
-  m_IndirectSpecularColor: {r: 0.008680698, g: 0.008848519, b: 0.01971401, a: 1}
+  m_IndirectSpecularColor: {r: 0.008625746, g: 0.0088489335, b: 0.019664578, a: 1}
   m_UseRadianceAmbientProbe: 0
 --- !u!157 &3
 LightmapSettings:
@@ -3373,7 +3373,7 @@ Mesh:
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_Name: pb_Mesh1371920
+  m_Name: pb_Mesh29334
   serializedVersion: 10
   m_SubMeshes:
   - serializedVersion: 2
@@ -4552,16 +4552,18 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: c6076349f5ba68e42a691529ca18b437, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  interacting_object: {fileID: 0}
+  description_object: {fileID: 0}
   Interactable_Layer:
     serializedVersion: 2
     m_Bits: 128
-  discriptionOnly_Layer:
+  descriptionOnly_Layer:
     serializedVersion: 2
     m_Bits: 8
   outline: {fileID: 2100000, guid: 7cce37a684101b14a9ad7b746f5f95e2, type: 2}
   Default_noOutline: {fileID: 0}
   noOutline_tex: {fileID: 0}
-  rayhitdistance: 10
+  rayhitdistance: 15
   crosshair_txt: {fileID: 1493012193}
 --- !u!1 &691080877
 GameObject:
@@ -7825,6 +7827,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   Text1: {fileID: 1821429101}
   dialogueBox: {fileID: 41632526}
+  rcfps: {fileID: 673244247}
 --- !u!4 &1287214018
 Transform:
   m_ObjectHideFlags: 0
@@ -12154,6 +12157,7 @@ MonoBehaviour:
   - The Endless Summer
   - Russian Doll
   textSpeed: 0
+  rcfps: {fileID: 673244247}
 --- !u!1 &1785166290
 GameObject:
   m_ObjectHideFlags: 0
@@ -12936,9 +12940,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   timer: 0
   timer_up: 120
-  initiatedLoop: 0
   playermove: {fileID: 965397089}
-  endScreen: {fileID: 848960929}
   timer_UI: {fileID: 240262801}
   debug: 1
 --- !u!4 &1968735637

@@ -3,12 +3,13 @@ using System.Collections.Generic;
 using UnityEngine;
 using TMPro;
 
-public class Interactables : MonoBehaviour
+public class InteractablesManager : MonoBehaviour
 {
     public TextMeshProUGUI descriptions;
     [TextArea(3, 10)]
     public string[] interactions;
     public float textSpeed;
+    public RayCastFPS rcfps;
 
     private int index;
 
@@ -21,16 +22,16 @@ public class Interactables : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        if (RayCastFPS.description_object != null)
+        if (rcfps.description_object != null)
         {
            
-            if (RayCastFPS.description_object.gameObject.name == "Newspaper")
+            if (rcfps.description_object.gameObject.name == "Newspaper")
             {
                 Debug.Log("News");
                 index = 0;
                 StartCoroutine(TypeLine());
             }
-            if (RayCastFPS.description_object.gameObject.name == "Loose Light")
+            if (rcfps.description_object.gameObject.name == "Loose Light")
             {
                 index = 1;
                 StartCoroutine(TypeLine());
@@ -40,7 +41,7 @@ public class Interactables : MonoBehaviour
         {
             descriptions.text = string.Empty;
             //dialogueBox.SetActive(false);
-            this.gameObject.SetActive(false);
+            //this.gameObject.SetActive(false);
         }
     }
 

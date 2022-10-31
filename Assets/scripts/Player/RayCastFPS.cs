@@ -6,11 +6,11 @@ using TMPro;
 public class RayCastFPS : MonoBehaviour
 {
     [SerializeField]
-    public static GameObject interacting_object = null;
+    public  GameObject interacting_object = null;
     [SerializeField]
-    public static GameObject description_object = null;
+    public  GameObject description_object = null;
     public LayerMask Interactable_Layer;
-    public LayerMask discriptionOnly_Layer;
+    public LayerMask descriptionOnly_Layer;
 
     public Material outline;
     public Material Default_noOutline;
@@ -23,7 +23,7 @@ public class RayCastFPS : MonoBehaviour
     private void Update()
     {
         //debug
-        Debug.DrawRay(transform.position, transform.forward * 7, Color.green);
+        Debug.DrawRay(transform.position, transform.forward * rayhitdistance, Color.green);
 
         //actual code
         ray = new Ray(this.transform.position, this.transform.forward);
@@ -33,6 +33,7 @@ public class RayCastFPS : MonoBehaviour
         if (Physics.Raycast(ray, out hit, rayhitdistance, Interactable_Layer))
         {
             interacting_object = hit.transform.gameObject;
+            //change outline texture of the selected object
             if (interacting_object.GetComponent<Renderer>().sharedMaterial != outline)
             {
                 Default_noOutline = interacting_object.GetComponent<Renderer>().sharedMaterial;
@@ -41,7 +42,7 @@ public class RayCastFPS : MonoBehaviour
             if (noOutline_tex != null) outline.SetTexture("_Texture2D", noOutline_tex);
             interacting_object.GetComponent<Renderer>().sharedMaterial = outline;
         }
-        else if (interacting_object != null)
+        else if (interacting_object != null)//get rid of outline texture
         {
             interacting_object.GetComponent<Renderer>().sharedMaterial = Default_noOutline;
             noOutline_tex = null;
@@ -49,11 +50,15 @@ public class RayCastFPS : MonoBehaviour
             Default_noOutline = null;
             interacting_object = null;
         }
+ 
+
         //description obj
-        else if (Physics.Raycast(ray, out hit, rayhitdistance, discriptionOnly_Layer))
+        if (Physics.Raycast(ray, out hit, rayhitdistance, descriptionOnly_Layer))
         {
             description_object = hit.transform.gameObject;
         }
+
+        //display object name
 
         if (interacting_object != null)
         {
@@ -63,5 +68,6 @@ public class RayCastFPS : MonoBehaviour
         {
             crosshair_txt.text = "";
         }
+
     }
 }
