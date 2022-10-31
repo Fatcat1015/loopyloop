@@ -10,11 +10,11 @@ public class gameManagersubway : MonoBehaviour
 
     public float timer = 0;
     public float timer_up = 300;
-    public bool initiatedLoop = false;
+    public static bool initiatedLoop = false;
 
     public PlayerMovementFPS playermove;
 
-    public GameObject endScreen;
+    //public GameObject endScreen;
     public TMP_Text timer_UI;
 
     public bool debug = false;
@@ -46,10 +46,10 @@ public class gameManagersubway : MonoBehaviour
             playermove = GameObject.Find("Player").GetComponent<PlayerMovementFPS>();
         }
 
-        if(endScreen == null)
+        /*if(endScreen == null)
         {
             endScreen = GameObject.Find("GameOverScreen");
-        }
+        }*/
 
         if (timer_UI == null) 
         {
@@ -63,7 +63,7 @@ public class gameManagersubway : MonoBehaviour
             //show how you died
             if (Input.GetKeyDown(KeyCode.Space))
             {
-                endScreen.SetActive(false);
+                //endScreen.SetActive(false);
                 timer = 0;
                 initiatedLoop = false;
                 //turn on the playermovement
@@ -71,14 +71,14 @@ public class gameManagersubway : MonoBehaviour
             }
             else
             {
-                endScreen.SetActive(true);
+                //endScreen.SetActive(true);
                 playermove.enabled = false;
             }
 
         }
         else
         {
-            endScreen.SetActive(false);
+            //endScreen.SetActive(false);
             if (timer >= timer_up)
             {
                 Debug.Log("Test");
@@ -95,6 +95,6 @@ public class gameManagersubway : MonoBehaviour
     {
         initiatedLoop = true;
         //reset player position
-        //SceneManager.LoadScene("EnvironmentScene", LoadSceneMode.Single);
+        
     }
 }
