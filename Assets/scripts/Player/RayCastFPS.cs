@@ -57,16 +57,19 @@ public class RayCastFPS : MonoBehaviour
 
         if (interacting_object != null)
         {
-            crosshair_txt.text = interacting_object.gameObject.name;
+            crosshair_txt.text = "E";
                 //interact with objects
+            if (Input.GetKeyDown(KeyCode.E))
+            {
                 //load dialogues for interacting if there's one.
-                if(interacting_object.GetComponent<DialogueLoad>() != null)
+                if (interacting_object.GetComponent<DialogueLoad>() != null)
                 {
                     if (!dm.speaking)
                     {
                         dm.dialogueLoader = interacting_object;
                         dm.LoadDialogue();
                     }
+                }
             }
         }
         else

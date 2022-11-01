@@ -102,11 +102,8 @@ public class gameManagersubway : MonoBehaviour
     public IEnumerator timeLoop()//initiate timeloop after a few  seconds
     {
         dr.predeath();
-        yield return new WaitForSeconds(3);
+        yield return new WaitForSeconds(5);
         initiatedLoop = true;
         timer = 0;
-
-        //reset player position
-        
     }
 }

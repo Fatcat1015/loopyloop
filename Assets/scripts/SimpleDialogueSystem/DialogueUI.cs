@@ -15,7 +15,6 @@ public class DialogueUI : MonoBehaviour
     public List<string> allCharaterNames = new List<string>();
 
     public Image DialogueBox;
-    public Image Portrait;
 
     //put your dialogue path here
     [SerializeField]public string ReadingTextPath;
@@ -28,7 +27,7 @@ public class DialogueUI : MonoBehaviour
     public int sentenceCount = 0;
 
     public bool typewriterEffect = true;
-    public float typewriterEffectTime = 0.025f;
+    public float typewriterEffectTime = 0.01f;
     public bool typewriting = false;
 
     public GameObject dialogueLoader = null;
@@ -70,6 +69,7 @@ public class DialogueUI : MonoBehaviour
         //finish reading
         inp_stm.Close();
         */
+
         if(allDialogue.Count == 0)
         {
             DialogueLoad dl = dialogueLoader.GetComponent<DialogueLoad>();
@@ -96,7 +96,7 @@ public class DialogueUI : MonoBehaviour
         NameText.text = allNames[0];
         sentenceCount = 0;
 
-        changePortrait();
+        //changePortrait();
 
         if (!typewriterEffect)
         {
@@ -127,7 +127,7 @@ public class DialogueUI : MonoBehaviour
             {
                 sentenceCount += 1;
                 NameText.text = allNames[sentenceCount];
-                changePortrait();
+                //changePortrait();
                 if (typewriterEffect)
                 {
                     StartCoroutine(TypeWriterText());
@@ -176,6 +176,7 @@ public class DialogueUI : MonoBehaviour
         typewriting = false;
     }
 
+    /*
     void changePortrait()
     {
         for (int i = 0; i < allCharaterNames.Count; i++)
@@ -191,7 +192,7 @@ public class DialogueUI : MonoBehaviour
                 Portrait.sprite = null;
             }
         }
-    }
+    }*/
 
 
 }
