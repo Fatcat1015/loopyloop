@@ -58,10 +58,7 @@ public class RayCastFPS : MonoBehaviour
         if (interacting_object != null)
         {
             crosshair_txt.text = interacting_object.gameObject.name;
-            if (Input.GetKeyDown(KeyCode.E))
-            {
                 //interact with objects
-
                 //load dialogues for interacting if there's one.
                 if(interacting_object.GetComponent<DialogueLoad>() != null)
                 {
@@ -70,8 +67,6 @@ public class RayCastFPS : MonoBehaviour
                         dm.dialogueLoader = interacting_object;
                         dm.LoadDialogue();
                     }
-
-                }
             }
         }
         else
@@ -89,19 +84,14 @@ public class RayCastFPS : MonoBehaviour
             description_object = null;
         }
 
-        //see description of objects by pressing E
-
+        //see description of objects
         if(description_object != null)
         {
-            if (Input.GetKeyDown(KeyCode.E))
-            {
                 if (!dm.speaking)
                 {
                     dm.dialogueLoader = description_object;
                     dm.LoadDialogue();
                 }
-                
-            }
         }
 
     }
