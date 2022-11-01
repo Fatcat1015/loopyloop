@@ -1,7 +1,6 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
-using UnityEngine.SceneManagement;
 using TMPro;
 
 public class gameManagersubway : MonoBehaviour
@@ -11,6 +10,8 @@ public class gameManagersubway : MonoBehaviour
     public float timer = 0;
     public float timer_up = 300;
     public static bool initiatedLoop = false;
+
+    public Deathreset dr;
 
     public PlayerMovementFPS playermove;
 
@@ -38,6 +39,17 @@ public class gameManagersubway : MonoBehaviour
         /*endScreen = GameObject.Find("GameOverScreen");
         playermove = GameObject.Find("Player").GetComponent<PlayerMovementFPS>();
         timer_UI = GameObject.Find("Timer").GetComponent<TMP_Text>();*/
+
+        //initialize
+        if (playermove == null)
+        {
+            playermove = GameObject.Find("Player").GetComponent<PlayerMovementFPS>();
+        }
+
+        if (timer_UI == null)
+        {
+            timer_UI = GameObject.Find("Timer").GetComponent<TMP_Text>();
+        }
     }
 
     void Update()
@@ -64,39 +76,21 @@ public class gameManagersubway : MonoBehaviour
         //display clock
 
         timer_UI.text = "12:" + displayMinutes+ ":" +  displaySeconds;
-
-        if (playermove == null)
-        {
-            playermove = GameObject.Find("Player").GetComponent<PlayerMovementFPS>();
-        }
-
-        /*if(endScreen == null)
-        {
-            endScreen = GameObject.Find("GameOverScreen");
-        }*/
-
-        if (timer_UI == null) 
-        {
-            timer_UI = GameObject.Find("Timer").GetComponent<TMP_Text>();
-        }
         
-        //timer 5 minutes reset
+        
+        //timer reset
 
         if (initiatedLoop)
         {
             //show how you died
             if (Input.GetKeyDown(KeyCode.Space))
             {
-                //endScreen.SetActive(false);
-                timer = 0;
+                //reset player
+                //deathreset codes
+                dr.resetPos();
+                //timer = 0;
                 initiatedLoop = false;
-                //turn on the playermovement
-                playermove.enabled = true;
-            }
-            else
-            {
-                //endScreen.SetActive(true);
-                playermove.enabled = false;
+                timer += Time.deltaTime;
             }
 
         }
@@ -105,7 +99,7 @@ public class gameManagersubway : MonoBehaviour
             //endScreen.SetActive(false);
             if (timer >= timer_up)
             {
-                timeLoop();
+                StartCoroutine(timeLoop());
             }
             else
             {
@@ -114,9 +108,13 @@ public class gameManagersubway : MonoBehaviour
         }
     }
 
-    void timeLoop()
+    public IEnumerator timeLoop()//initiate timeloop after a few  seconds
     {
+        dr.predeath();
+        yield return new WaitForSeconds(3);
         initiatedLoop = true;
+        timer = 0;
+
         //reset player position
         
     }

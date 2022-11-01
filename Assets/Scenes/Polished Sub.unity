@@ -210,6 +210,7 @@ MonoBehaviour:
   lines:
   - "I'm back here again! Did I just \u2026 die? How is this possible?"
   textSpeed: 0
+  index: 0
 --- !u!114 &28361056
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -362,6 +363,7 @@ MonoBehaviour:
   lines:
   - ......
   textSpeed: 0
+  index: 0
 --- !u!114 &29202443
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -832,6 +834,7 @@ MonoBehaviour:
   - 'No, no, I was standing right here. '
   - What just happened?
   textSpeed: 0
+  index: 0
 --- !u!114 &111845667
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1250,6 +1253,7 @@ MonoBehaviour:
   - 'Damn it! Why?! I just keep dying over and over again! '
   - This place is fucking cursed!
   textSpeed: 0
+  index: 0
 --- !u!114 &160879711
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -3636,6 +3640,7 @@ MonoBehaviour:
 
 '
   textSpeed: 0
+  index: 0
 --- !u!114 &523640436
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -6164,6 +6169,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   respawnPos: {fileID: 1078014122}
   blackscreen: {fileID: 290931657}
+  gm: {fileID: 1968735636}
 --- !u!1 &1020939699
 GameObject:
   m_ObjectHideFlags: 0
@@ -7087,6 +7093,7 @@ MonoBehaviour:
 
 '
   textSpeed: 0
+  index: 0
 --- !u!114 &1103107346
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -8001,6 +8008,7 @@ MonoBehaviour:
 
 '
   textSpeed: 0
+  index: 0
 --- !u!114 &1292115129
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -11507,7 +11515,7 @@ Mesh:
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_Name: pb_Mesh1373542
+  m_Name: pb_Mesh30956
   serializedVersion: 10
   m_SubMeshes:
   - serializedVersion: 2
@@ -11725,6 +11733,7 @@ MonoBehaviour:
 
 '
   textSpeed: 0
+  index: 0
 --- !u!114 &1692051335
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -12158,6 +12167,7 @@ MonoBehaviour:
   - Russian Doll
   textSpeed: 0
   rcfps: {fileID: 673244247}
+  index: 0
 --- !u!1 &1785166290
 GameObject:
   m_ObjectHideFlags: 0
@@ -12395,6 +12405,7 @@ MonoBehaviour:
 
 '
   textSpeed: 0
+  index: 0
 --- !u!114 &1821429104
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -12939,10 +12950,11 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   timer: 0
-  timer_up: 120
+  timer_up: 10
+  dr: {fileID: 965397092}
   playermove: {fileID: 965397089}
   timer_UI: {fileID: 240262801}
-  debug: 1
+  debug: 0
 --- !u!4 &1968735637
 Transform:
   m_ObjectHideFlags: 0
@@ -13245,6 +13257,7 @@ MonoBehaviour:
   - "I'm stuck in this damn death trap time loop! \n"
   - "I need to figure out a way to end it, I am NOT going to stay here forever.\r"
   textSpeed: 0
+  index: 0
 --- !u!114 &2035157816
 MonoBehaviour:
   m_ObjectHideFlags: 0
