@@ -20,6 +20,8 @@ public class RayCastFPS : MonoBehaviour
 
     public TMP_Text crosshair_txt;
 
+    public DialogueUI dm;
+
     private void Update()
     {
         //debug
@@ -50,23 +52,56 @@ public class RayCastFPS : MonoBehaviour
             Default_noOutline = null;
             interacting_object = null;
         }
- 
-
-        //description obj
-        if (Physics.Raycast(ray, out hit, rayhitdistance, descriptionOnly_Layer))
-        {
-            description_object = hit.transform.gameObject;
-        }
 
         //display object name
 
         if (interacting_object != null)
         {
             crosshair_txt.text = interacting_object.gameObject.name;
+            if (Input.GetKeyDown(KeyCode.E))
+            {
+                //interact with objects
+
+                //load dialogues for interacting if there's one.
+                if(interacting_object.GetComponent<DialogueLoad>() != null)
+                {
+                    if (!dm.speaking)
+                    {
+                        dm.dialogueLoader = interacting_object;
+                        dm.LoadDialogue();
+                    }
+
+                }
+            }
         }
         else
         {
             crosshair_txt.text = "";
+        }
+
+        //description obj
+        if (Physics.Raycast(ray, out hit, rayhitdistance, descriptionOnly_Layer))
+        {
+            description_object = hit.transform.gameObject;
+        }
+        else
+        {
+            description_object = null;
+        }
+
+        //see description of objects by pressing E
+
+        if(description_object != null)
+        {
+            if (Input.GetKeyDown(KeyCode.E))
+            {
+                if (!dm.speaking)
+                {
+                    dm.dialogueLoader = description_object;
+                    dm.LoadDialogue();
+                }
+                
+            }
         }
 
     }

@@ -5,17 +5,19 @@ using TMPro;
 
 public class dialogueManager : MonoBehaviour
 {
-    public TextMeshProUGUI sentences;
+    public TMP_Text sentences;
     [TextArea(3, 10)]
     public string[] lines;
     public float textSpeed;
 
     private int index;
 
+    public bool speaking = false;
+
     void Start()
     {
         sentences.text = string.Empty;
-        StartDialogue();
+        //StartDialogue();
     }
 
     // Update is called once per frame
@@ -39,6 +41,8 @@ public class dialogueManager : MonoBehaviour
     void StartDialogue()
     {
         index = 0;
+        speaking = true;
+        if(!speaking)
         StartCoroutine(TypeLine());
     }
 

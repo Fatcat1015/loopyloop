@@ -5,7 +5,7 @@ using TMPro;
 
 public class InteractablesManager : MonoBehaviour
 {
-    public TextMeshProUGUI descriptions;
+    public TMP_Text descriptions;
     [TextArea(3, 10)]
     public string[] interactions;
     public float textSpeed;
@@ -27,8 +27,7 @@ public class InteractablesManager : MonoBehaviour
            
             if (rcfps.description_object.gameObject.name == "Newspaper")
             {
-                Debug.Log("News");
-                index = 0;
+                index = 2;
                 StartCoroutine(TypeLine());
             }
             if (rcfps.description_object.gameObject.name == "Loose Light")

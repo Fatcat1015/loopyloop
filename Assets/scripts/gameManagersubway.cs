@@ -18,11 +18,9 @@ public class gameManagersubway : MonoBehaviour
     private string displayMinutes = "";
     private string  displaySeconds = "";
 
-    //public GameObject endScreen;
     public TMP_Text timer_UI;
 
-    public bool debug = false;
-
+    /*
     private void Awake()
     {
         if (Instance != null)
@@ -32,14 +30,10 @@ public class gameManagersubway : MonoBehaviour
         }
         Instance = this;
         DontDestroyOnLoad(gameObject);
-    }
+    }*/
 
     private void Start()
     {
-        /*endScreen = GameObject.Find("GameOverScreen");
-        playermove = GameObject.Find("Player").GetComponent<PlayerMovementFPS>();
-        timer_UI = GameObject.Find("Timer").GetComponent<TMP_Text>();*/
-
         //initialize
         if (playermove == null)
         {
@@ -66,7 +60,7 @@ public class gameManagersubway : MonoBehaviour
 
         if (timer % 60 < 10)
         {
-            displaySeconds = "0" + Mathf.RoundToInt(timer).ToString();
+            displaySeconds = "0" + Mathf.RoundToInt(timer%60).ToString();
         }
         else
         {
@@ -83,15 +77,12 @@ public class gameManagersubway : MonoBehaviour
         if (initiatedLoop)
         {
             //show how you died
-            if (Input.GetKeyDown(KeyCode.Space))
-            {
                 //reset player
                 //deathreset codes
                 dr.resetPos();
                 //timer = 0;
                 initiatedLoop = false;
-                timer += Time.deltaTime;
-            }
+                //timer += Time.deltaTime;
 
         }
         else
