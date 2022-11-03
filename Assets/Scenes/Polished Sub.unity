@@ -2842,7 +2842,7 @@ Mesh:
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_Name: pb_Mesh30488
+  m_Name: pb_Mesh29780
   serializedVersion: 10
   m_SubMeshes:
   - serializedVersion: 2
@@ -3966,7 +3966,14 @@ MonoBehaviour:
   descriptionOnly_Layer:
     serializedVersion: 2
     m_Bits: 8
-  rayhitdistance: 10
+  postprocessing_layer:
+    serializedVersion: 2
+    m_Bits: 256
+  interact_layernum: 0
+  description_layernum: 0
+  pp_layernum: 0
+  object_focused: 0
+  rayhitdistance: 15
   crosshair_txt: {fileID: 1493012193}
   dm: {fileID: 1330759169}
 --- !u!65 &678110552
@@ -58180,7 +58187,7 @@ GameObject:
   - component: {fileID: 1139677725474761054}
   - component: {fileID: 8772984267586569548}
   - component: {fileID: 6662400269775829845}
-  m_Layer: 8
+  m_Layer: 7
   m_Name: Metal.001
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -61329,7 +61336,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 424643171735661703}
-  m_Layer: 8
+  m_Layer: 7
   m_Name: Bench4
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -63990,7 +63997,7 @@ GameObject:
   - component: {fileID: 3253920990234127130}
   - component: {fileID: 9162637285489826832}
   - component: {fileID: 9162637285489826833}
-  m_Layer: 8
+  m_Layer: 7
   m_Name: Wood.001
   m_TagString: Untagged
   m_Icon: {fileID: 0}

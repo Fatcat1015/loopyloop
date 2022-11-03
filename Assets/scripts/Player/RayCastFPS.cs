@@ -11,10 +11,13 @@ public class RayCastFPS : MonoBehaviour
     public  GameObject description_object = null;
     public LayerMask Interactable_Layer;
     public LayerMask descriptionOnly_Layer;
+    public LayerMask postprocessing_layer;
+    public int interact_layernum;
+    public int description_layernum;
+    public int pp_layernum;
 
-    //public Material outline;
-    //public Material Default_noOutline;
-    //public Texture noOutline_tex;
+    public bool object_focused = false;
+
     public Ray ray;
     public int rayhitdistance = 25;
 
@@ -22,32 +25,56 @@ public class RayCastFPS : MonoBehaviour
 
     public DialogueUI dm;
 
+    private void Start()
+    {
+        interact_layernum = Mathf.RoundToInt(Mathf.Log(Interactable_Layer.value, 2));
+        description_layernum = Mathf.RoundToInt(Mathf.Log(descriptionOnly_Layer.value,2));
+        pp_layernum = Mathf.RoundToInt(Mathf.Log(postprocessing_layer.value,2));
+    }
+
     private void Update()
     { 
         //actual code
         ray = new Ray(this.transform.position, this.transform.forward);
         RaycastHit hit;
 
+        //determine if still focused on the previous object
+        if (Physics.Raycast(ray, out hit, rayhitdistance, postprocessing_layer) )
+        {
+            if(hit.transform.gameObject == interacting_object || hit.transform.gameObject == description_object)
+            {
+                object_focused = true;
+            }
+            else
+            {
+                object_focused = false;
+            }
+            
+        }
+        else
+        {
+            object_focused = false;
+        }
+
         //interactable obj
         if (Physics.Raycast(ray, out hit, rayhitdistance, Interactable_Layer))
         {
             interacting_object = hit.transform.gameObject;
-            //change outline texture of the selected object
-            /*if (interacting_object.GetComponent<Renderer>().sharedMaterial != outline)
+            //change outline postprosessing layer of the selected object
+            if (interacting_object.layer != pp_layernum)
             {
-                Default_noOutline = interacting_object.GetComponent<Renderer>().sharedMaterial;
-                noOutline_tex = Default_noOutline.mainTexture;
+                interacting_object.layer = pp_layernum;
             }
-            if (noOutline_tex != null) outline.SetTexture("_Texture2D", noOutline_tex);
-            interacting_object.GetComponent<Renderer>().sharedMaterial = outline;*/
         }
-        else if (interacting_object != null)//get rid of outline texture
+
+
+        else if (interacting_object != null && !object_focused)//get rid of outline
         {
-            /*interacting_object.GetComponent<Renderer>().sharedMaterial = Default_noOutline;
-            noOutline_tex = null;
-            outline.SetTexture("_Texture2D", null);
-            Default_noOutline = null;
-            interacting_object = null;*/
+            
+                interacting_object.layer = interact_layernum;
+                interacting_object = null;
+            
+            
         }
 
         //display object name
@@ -78,10 +105,20 @@ public class RayCastFPS : MonoBehaviour
         if (Physics.Raycast(ray, out hit, rayhitdistance, descriptionOnly_Layer))
         {
             description_object = hit.transform.gameObject;
+            if(description_object.layer != pp_layernum)
+            description_object.layer = pp_layernum;
         }
         else
         {
-            description_object = null;
+            if(description_object != null && !object_focused)
+            {
+               
+                    description_object.layer = description_layernum;
+                    description_object = null;
+               
+                    
+            }
+            
         }
 
         //see description of objects
