@@ -38,7 +38,7 @@ RenderSettings:
   m_ReflectionIntensity: 1
   m_CustomReflection: {fileID: 0}
   m_Sun: {fileID: 0}
-  m_IndirectSpecularColor: {r: 0.008680698, g: 0.008848519, b: 0.01971401, a: 1}
+  m_IndirectSpecularColor: {r: 0.008625746, g: 0.0088489335, b: 0.019664578, a: 1}
   m_UseRadianceAmbientProbe: 0
 --- !u!157 &3
 LightmapSettings:
@@ -1496,7 +1496,7 @@ Mesh:
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_Name: pb_Mesh44068
+  m_Name: pb_Mesh34788
   serializedVersion: 10
   m_SubMeshes:
   - serializedVersion: 2
@@ -2842,7 +2842,7 @@ Mesh:
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_Name: pb_Mesh39768
+  m_Name: pb_Mesh30488
   serializedVersion: 10
   m_SubMeshes:
   - serializedVersion: 2
@@ -3879,7 +3879,7 @@ MonoBehaviour:
   m_RequiresOpaqueTextureOption: 2
   m_CameraType: 0
   m_Cameras: []
-  m_RendererIndex: -1
+  m_RendererIndex: 0
   m_VolumeLayerMask:
     serializedVersion: 2
     m_Bits: 1
@@ -3912,7 +3912,7 @@ Camera:
   m_GameObject: {fileID: 673244241}
   m_Enabled: 1
   serializedVersion: 2
-  m_ClearFlags: 1
+  m_ClearFlags: 4
   m_BackGroundColor: {r: 0.19215687, g: 0.3019608, b: 0.4745098, a: 0}
   m_projectionMatrixMode: 1
   m_GateFitMode: 2
@@ -3966,9 +3966,6 @@ MonoBehaviour:
   descriptionOnly_Layer:
     serializedVersion: 2
     m_Bits: 8
-  outline: {fileID: 2100000, guid: 7cce37a684101b14a9ad7b746f5f95e2, type: 2}
-  Default_noOutline: {fileID: 0}
-  noOutline_tex: {fileID: 0}
   rayhitdistance: 10
   crosshair_txt: {fileID: 1493012193}
   dm: {fileID: 1330759169}
@@ -11668,7 +11665,7 @@ Mesh:
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_Name: pb_Mesh41360
+  m_Name: pb_Mesh32080
   serializedVersion: 10
   m_SubMeshes:
   - serializedVersion: 2
@@ -58183,7 +58180,7 @@ GameObject:
   - component: {fileID: 1139677725474761054}
   - component: {fileID: 8772984267586569548}
   - component: {fileID: 6662400269775829845}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: Metal.001
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -61332,7 +61329,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 424643171735661703}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: Bench4
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -63993,7 +63990,7 @@ GameObject:
   - component: {fileID: 3253920990234127130}
   - component: {fileID: 9162637285489826832}
   - component: {fileID: 9162637285489826833}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: Wood.001
   m_TagString: Untagged
   m_Icon: {fileID: 0}

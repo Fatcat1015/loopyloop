@@ -12,9 +12,9 @@ public class RayCastFPS : MonoBehaviour
     public LayerMask Interactable_Layer;
     public LayerMask descriptionOnly_Layer;
 
-    public Material outline;
-    public Material Default_noOutline;
-    public Texture noOutline_tex;
+    //public Material outline;
+    //public Material Default_noOutline;
+    //public Texture noOutline_tex;
     public Ray ray;
     public int rayhitdistance = 25;
 
@@ -23,10 +23,7 @@ public class RayCastFPS : MonoBehaviour
     public DialogueUI dm;
 
     private void Update()
-    {
-        //debug
-        Debug.DrawRay(transform.position, transform.forward * rayhitdistance, Color.green);
-
+    { 
         //actual code
         ray = new Ray(this.transform.position, this.transform.forward);
         RaycastHit hit;
@@ -36,28 +33,28 @@ public class RayCastFPS : MonoBehaviour
         {
             interacting_object = hit.transform.gameObject;
             //change outline texture of the selected object
-            if (interacting_object.GetComponent<Renderer>().sharedMaterial != outline)
+            /*if (interacting_object.GetComponent<Renderer>().sharedMaterial != outline)
             {
                 Default_noOutline = interacting_object.GetComponent<Renderer>().sharedMaterial;
                 noOutline_tex = Default_noOutline.mainTexture;
             }
             if (noOutline_tex != null) outline.SetTexture("_Texture2D", noOutline_tex);
-            interacting_object.GetComponent<Renderer>().sharedMaterial = outline;
+            interacting_object.GetComponent<Renderer>().sharedMaterial = outline;*/
         }
         else if (interacting_object != null)//get rid of outline texture
         {
-            interacting_object.GetComponent<Renderer>().sharedMaterial = Default_noOutline;
+            /*interacting_object.GetComponent<Renderer>().sharedMaterial = Default_noOutline;
             noOutline_tex = null;
             outline.SetTexture("_Texture2D", null);
             Default_noOutline = null;
-            interacting_object = null;
+            interacting_object = null;*/
         }
 
         //display object name
 
         if (interacting_object != null)
         {
-            crosshair_txt.text = "E";
+            crosshair_txt.text = "press E to interact";
                 //interact with objects
             if (Input.GetKeyDown(KeyCode.E))
             {
@@ -92,8 +89,11 @@ public class RayCastFPS : MonoBehaviour
         {
                 if (!dm.speaking)
                 {
+                if (Input.GetKeyDown(KeyCode.E))
+                {
                     dm.dialogueLoader = description_object;
                     dm.LoadDialogue();
+                }
                 }
         }
 
