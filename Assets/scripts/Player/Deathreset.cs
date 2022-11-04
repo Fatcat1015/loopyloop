@@ -18,13 +18,6 @@ public class Deathreset : MonoBehaviour
         }
     }
 
-    IEnumerator deathBlack()
-    {
-        predeath();
-        yield return new WaitForSeconds(5);
-        resetPos();
-    }
-
 
     public void predeath()
     {

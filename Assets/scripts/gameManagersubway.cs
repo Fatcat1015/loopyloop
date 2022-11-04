@@ -20,17 +20,14 @@ public class gameManagersubway : MonoBehaviour
 
     public TMP_Text timer_UI;
 
-    /*
-    private void Awake()
-    {
-        if (Instance != null)
-        {
-            Destroy(gameObject);
-            return;
-        }
-        Instance = this;
-        DontDestroyOnLoad(gameObject);
-    }*/
+    public bool died = false;
+    public bool vendingMachine_death = false;
+    public bool light_death = false;
+    public bool securityCam_death = false;
+    public bool electricity_death = false;
+    public int death_count = 0;
+
+    public GameObject Friend;
 
     private void Start()
     {
@@ -44,6 +41,13 @@ public class gameManagersubway : MonoBehaviour
         {
             timer_UI = GameObject.Find("Timer").GetComponent<TMP_Text>();
         }
+
+        foreach (Transform child in Friend.transform)
+        {
+            child.gameObject.SetActive(false);
+        }
+
+        Friend.transform.GetChild(death_count).gameObject.SetActive(true);
     }
 
     void Update()
@@ -58,7 +62,7 @@ public class gameManagersubway : MonoBehaviour
             displayMinutes = Mathf.FloorToInt(timer / 60).ToString();
         }
 
-        if (timer % 60 < 10)
+        if (Mathf.RoundToInt(timer % 60) < 10)
         {
             displaySeconds = "0" + Mathf.RoundToInt(timer%60).ToString();
         }
@@ -76,34 +80,46 @@ public class gameManagersubway : MonoBehaviour
 
         if (initiatedLoop)
         {
-            //show how you died
-                //reset player
-                //deathreset codes
-                dr.resetPos();
-                //timer = 0;
-                initiatedLoop = false;
-                //timer += Time.deltaTime;
-
+            player_died();
+            initiatedLoop = false;
         }
         else
         {
             //endScreen.SetActive(false);
             if (timer >= timer_up)
             {
-                StartCoroutine(timeLoop());
+                player_died();
+                //StartCoroutine(timeLoop());
             }
             else
             {
                 timer += Time.deltaTime;
             }
         }
+
+    }
+
+    void player_died()
+    {
+        //reset player
+        //deathreset codes
+        dr.predeath();
+        death_count += 1;
+        died = true;
+        //set the state of dialogue w friend
+        if (death_count <=6)
+        {
+            Friend.transform.GetChild(death_count - 1).gameObject.SetActive(false);
+            Friend.transform.GetChild(death_count).gameObject.SetActive(true);
+        }
+        timer = 0;
+        dr.resetPos();
     }
 
     public IEnumerator timeLoop()//initiate timeloop after a few  seconds
     {
         dr.predeath();
-        yield return new WaitForSeconds(5);
+        yield return new WaitForSeconds(2);
         initiatedLoop = true;
-        timer = 0;
     }
 }
