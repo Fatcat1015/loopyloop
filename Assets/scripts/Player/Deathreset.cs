@@ -12,10 +12,11 @@ public class Deathreset : MonoBehaviour
     {
         if (other.tag == "death")//if collided with death object 
         {
-            StartCoroutine(gm.timeLoop());
-            //StartCoroutine(deathBlack());
-            //this.gameObject.transform.position = respawnPos.transform.position;
+             gm.initiatedLoop = true;
+            //specify which death trigger
+            //
         }
+
     }
 
 

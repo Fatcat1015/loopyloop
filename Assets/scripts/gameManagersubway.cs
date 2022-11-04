@@ -9,7 +9,7 @@ public class gameManagersubway : MonoBehaviour
 
     public float timer = 0;
     public float timer_up = 300;
-    public static bool initiatedLoop = false;
+    public bool initiatedLoop = false;
 
     public Deathreset dr;
 
@@ -25,9 +25,17 @@ public class gameManagersubway : MonoBehaviour
     public bool light_death = false;
     public bool securityCam_death = false;
     public bool electricity_death = false;
+    public bool killer_death = false;
+
     public int death_count = 0;
 
     public GameObject Friend;
+    public GameObject Newspaper;
+    public GameObject LooseLight;
+    public GameObject VendingMachine;
+    public GameObject ElectrifyToilet;
+
+    public bool dead = false; // important *****
 
     private void Start()
     {
@@ -48,6 +56,7 @@ public class gameManagersubway : MonoBehaviour
         }
 
         Friend.transform.GetChild(death_count).gameObject.SetActive(true);
+        SceneReset();
     }
 
     void Update()
@@ -97,6 +106,12 @@ public class gameManagersubway : MonoBehaviour
             }
         }
 
+        if (dead)
+        {
+            if(Input.GetKeyDown(KeyCode.R))
+            dr.resetPos();
+        }
+
     }
 
     void player_died()
@@ -113,13 +128,17 @@ public class gameManagersubway : MonoBehaviour
             Friend.transform.GetChild(death_count).gameObject.SetActive(true);
         }
         timer = 0;
-        dr.resetPos();
+        //change dialogues according to the loop
+        SceneReset();
+        dead = true;
     }
 
-    public IEnumerator timeLoop()//initiate timeloop after a few  seconds
+    void SceneReset()
     {
-        dr.predeath();
-        yield return new WaitForSeconds(2);
-        initiatedLoop = true;
+        //newspaper - killer
+        var newsnum = killer_death ? 1 : 0;
+        Newspaper.transform.GetChild(newsnum).gameObject.SetActive(true);
+
+
     }
 }

@@ -61,17 +61,17 @@ public class RayCastFPS : MonoBehaviour
         {
             interacting_object = hit.transform.gameObject;
             //change outline postprosessing layer of the selected object
-            if (interacting_object.layer != pp_layernum)
-            {
-                interacting_object.layer = pp_layernum;
-            }
+            //if (interacting_object.layer != pp_layernum)
+            //{
+                //interacting_object.layer = pp_layernum;
+            //}
         }
 
 
-        else if (interacting_object != null && !object_focused)//get rid of outline
+        else if (interacting_object != null )//get rid of outline
         {
             
-                interacting_object.layer = interact_layernum;
+                //interacting_object.layer = interact_layernum;
                 interacting_object = null;
             
             
@@ -81,7 +81,7 @@ public class RayCastFPS : MonoBehaviour
 
         if (interacting_object != null)
         {
-            crosshair_txt.text = "press E to interact";
+            crosshair_txt.text = "press E to interact with " + interacting_object.name;
                 //interact with objects
             if (Input.GetKeyDown(KeyCode.E))
             {
@@ -105,15 +105,15 @@ public class RayCastFPS : MonoBehaviour
         if (Physics.Raycast(ray, out hit, rayhitdistance, descriptionOnly_Layer))
         {
             description_object = hit.transform.gameObject;
-            if(description_object.layer != pp_layernum)
-            description_object.layer = pp_layernum;
+            //if(description_object.layer != pp_layernum)
+            //description_object.layer = pp_layernum;
         }
         else
         {
-            if(description_object != null && !object_focused)
+            if(description_object != null)
             {
                
-                    description_object.layer = description_layernum;
+                    //description_object.layer = description_layernum;
                     description_object = null;
                
                     
@@ -124,7 +124,9 @@ public class RayCastFPS : MonoBehaviour
         //see description of objects
         if(description_object != null)
         {
-                if (!dm.speaking)
+            crosshair_txt.text = "press E to interact with " + description_object.name;
+
+            if (!dm.speaking)
                 {
                 if (Input.GetKeyDown(KeyCode.E))
                 {

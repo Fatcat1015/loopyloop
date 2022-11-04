@@ -271,6 +271,68 @@ MeshFilter:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 79865589}
   m_Mesh: {fileID: -937955407839429789, guid: d3ac5b37f972c934aa04b561efa490e8, type: 3}
+--- !u!1 &89290584
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 89290585}
+  - component: {fileID: 89290587}
+  - component: {fileID: 89290586}
+  m_Layer: 7
+  m_Name: after
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &89290585
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 89290584}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 658631365}
+  m_RootOrder: 1
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!65 &89290586
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 89290584}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Size: {x: 1.65, y: 0.57, z: 3.06}
+  m_Center: {x: 0, y: 0.28, z: 0}
+--- !u!114 &89290587
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 89290584}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ff0bfc99fcfb34346a3a471cffab5774, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  Names:
+  - 
+  Dialogues:
+  - 'Was this killer wondering around near this subway? '
 --- !u!1 &101935467
 GameObject:
   m_ObjectHideFlags: 0
@@ -3075,6 +3137,68 @@ MeshFilter:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 474027655}
   m_Mesh: {fileID: 10202, guid: 0000000000000000e000000000000000, type: 0}
+--- !u!1 &477896351
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 477896352}
+  - component: {fileID: 477896354}
+  - component: {fileID: 477896353}
+  m_Layer: 7
+  m_Name: after
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &477896352
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 477896351}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: -10.65, y: 0.78, z: 30.5}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 799983336}
+  m_RootOrder: 1
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &477896353
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 477896351}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ff0bfc99fcfb34346a3a471cffab5774, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  Names:
+  - 
+  Dialogues:
+  - 'Yep, broken and rotten. '
+--- !u!65 &477896354
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 477896351}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Size: {x: 7.43, y: 12.93, z: 7.8}
+  m_Center: {x: 0, y: 2.85, z: 0}
 --- !u!1 &492758503
 GameObject:
   m_ObjectHideFlags: 0
@@ -3741,6 +3865,68 @@ Transform:
   m_Father: {fileID: 543450653424980886}
   m_RootOrder: 4
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!1 &596779740
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 596779741}
+  - component: {fileID: 596779743}
+  - component: {fileID: 596779742}
+  m_Layer: 7
+  m_Name: before
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &596779741
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 596779740}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: -10.65, y: 0.78, z: 30.5}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 799983336}
+  m_RootOrder: 0
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &596779742
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 596779740}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ff0bfc99fcfb34346a3a471cffab5774, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  Names:
+  - 
+  Dialogues:
+  - 'This vending machine looks broken. '
+--- !u!65 &596779743
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 596779740}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Size: {x: 7.43, y: 12.93, z: 7.8}
+  m_Center: {x: 0, y: 2.85, z: 0}
 --- !u!1 &598524553
 GameObject:
   m_ObjectHideFlags: 0
@@ -4071,6 +4257,16 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: b8199e54bea966b4ba302d42bf96b22f,
         type: 3}
+      propertyPath: m_LocalScale.x
+      value: 1.0000004
+      objectReference: {fileID: 0}
+    - target: {fileID: -8679921383154817045, guid: b8199e54bea966b4ba302d42bf96b22f,
+        type: 3}
+      propertyPath: m_LocalScale.z
+      value: 1.0000004
+      objectReference: {fileID: 0}
+    - target: {fileID: -8679921383154817045, guid: b8199e54bea966b4ba302d42bf96b22f,
+        type: 3}
       propertyPath: m_LocalPosition.x
       value: 5.652
       objectReference: {fileID: 0}
@@ -4127,7 +4323,7 @@ PrefabInstance:
     - target: {fileID: 919132149155446097, guid: b8199e54bea966b4ba302d42bf96b22f,
         type: 3}
       propertyPath: m_Layer
-      value: 7
+      value: 0
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: b8199e54bea966b4ba302d42bf96b22f, type: 3}
@@ -4150,22 +4346,12 @@ BoxCollider:
   serializedVersion: 2
   m_Size: {x: 0.9207814, y: 0.27382714, z: 2.7896304}
   m_Center: {x: 0, y: 0, z: 0}
---- !u!114 &658631362
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
+--- !u!4 &658631365 stripped
+Transform:
+  m_CorrespondingSourceObject: {fileID: -8679921383154817045, guid: b8199e54bea966b4ba302d42bf96b22f,
+    type: 3}
+  m_PrefabInstance: {fileID: 658631356}
   m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 658631357}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: ff0bfc99fcfb34346a3a471cffab5774, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  Names:
-  - ' '
-  Dialogues:
-  - Well... It's New York. I am not surprised.
 --- !u!1 &673244241
 GameObject:
   m_ObjectHideFlags: 0
@@ -5010,6 +5196,39 @@ BoxCollider:
   serializedVersion: 2
   m_Size: {x: 14.118305, y: 0.20711517, z: 1.6569176}
   m_Center: {x: 9, y: 23.35915, z: 21.359419}
+--- !u!1 &799983335
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 799983336}
+  m_Layer: 0
+  m_Name: VendingMachine_Dialogues
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &799983336
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 799983335}
+  m_LocalRotation: {x: 0.7071068, y: -0, z: -0, w: 0.7071067}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 0.14834061, y: 0.14834067, z: 0.14834067}
+  m_ConstrainProportionsScale: 0
+  m_Children:
+  - {fileID: 596779741}
+  - {fileID: 477896352}
+  m_Father: {fileID: 1744952072197347815}
+  m_RootOrder: 2
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &803024801
 GameObject:
   m_ObjectHideFlags: 0
@@ -8433,7 +8652,7 @@ MeshCollider:
   m_GameObject: {fileID: 1287364294}
   m_Material: {fileID: 0}
   m_IsTrigger: 0
-  m_Enabled: 1
+  m_Enabled: 0
   serializedVersion: 4
   m_Convex: 0
   m_CookingOptions: 30
@@ -8990,6 +9209,69 @@ Transform:
   m_Father: {fileID: 1257711221}
   m_RootOrder: 3
   m_LocalEulerAnglesHint: {x: -90, y: 0, z: 0}
+--- !u!1 &1418525708
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1418525709}
+  - component: {fileID: 1418525710}
+  - component: {fileID: 1418525711}
+  m_Layer: 7
+  m_Name: newspaperbefore killer
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &1418525709
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1418525708}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 658631365}
+  m_RootOrder: 0
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &1418525710
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1418525708}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ff0bfc99fcfb34346a3a471cffab5774, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  Names:
+  - 
+  Dialogues:
+  - A killer on the loose... Huh. Considering we are in New York this is not very
+    surprising.
+--- !u!65 &1418525711
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1418525708}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Size: {x: 1.65, y: 0.57, z: 3.06}
+  m_Center: {x: 0, y: 0.28, z: 0}
 --- !u!1001 &1420785361
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -13288,6 +13570,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   timer: 0
   timer_up: 180
+  initiatedLoop: 0
   dr: {fileID: 965397092}
   playermove: {fileID: 965397089}
   timer_UI: {fileID: 240262801}
@@ -13296,8 +13579,14 @@ MonoBehaviour:
   light_death: 0
   securityCam_death: 0
   electricity_death: 0
+  killer_death: 0
   death_count: 0
   Friend: {fileID: 1205335784}
+  Newspaper: {fileID: 0}
+  LooseLight: {fileID: 0}
+  VendingMachine: {fileID: 0}
+  ElectrifyToilet: {fileID: 0}
+  dead: 0
 --- !u!4 &1968735637
 Transform:
   m_ObjectHideFlags: 0
@@ -25304,11 +25593,12 @@ Transform:
   m_GameObject: {fileID: 1896074623415606563}
   m_LocalRotation: {x: -0.7071068, y: -0, z: -0, w: 0.7071067}
   m_LocalPosition: {x: 2.826167, y: 3.3706212, z: 49.16958}
-  m_LocalScale: {x: 6.741242, y: 6.7412415, z: 6.7412415}
+  m_LocalScale: {x: 6.741242, y: 6.7412405, z: 6.7412405}
   m_ConstrainProportionsScale: 0
   m_Children:
   - {fileID: 7233826241078919626}
   - {fileID: 1287364298}
+  - {fileID: 799983336}
   m_Father: {fileID: 0}
   m_RootOrder: 9
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -52358,7 +52648,7 @@ GameObject:
   - component: {fileID: 3237959394818490574}
   - component: {fileID: 7529569635423531856}
   - component: {fileID: 7529569635423531857}
-  m_Layer: 7
+  m_Layer: 0
   m_Name: Vending Machine
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -59739,7 +60029,7 @@ BoxCollider:
   m_GameObject: {fileID: 6327153568652477428}
   m_Material: {fileID: 0}
   m_IsTrigger: 0
-  m_Enabled: 1
+  m_Enabled: 0
   serializedVersion: 2
   m_Size: {x: 0.9866678, y: 0.93096685, z: 1.9860966}
   m_Center: {x: -0.00023536383, y: 0.034516443, z: 0.99304837}
