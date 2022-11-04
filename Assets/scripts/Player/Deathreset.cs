@@ -14,7 +14,8 @@ public class Deathreset : MonoBehaviour
         {
              gm.initiatedLoop = true;
             //specify which death trigger
-            //
+            if(other.gameObject.name == "killer trigger")
+            gm.killer_death = true;
         }
 
     }
