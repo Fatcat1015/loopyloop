@@ -91,7 +91,7 @@ public class RayCastFPS : MonoBehaviour
                     if (!dm.speaking)
                     {
                         dm.dialogueLoader = interacting_object;
-                        dm.LoadDialogue();
+                        dm.LoadDialogue(null);
                     }
                 }
             }
@@ -131,7 +131,7 @@ public class RayCastFPS : MonoBehaviour
                 if (Input.GetKeyDown(KeyCode.E))
                 {
                     dm.dialogueLoader = description_object;
-                    dm.LoadDialogue();
+                    dm.LoadDialogue(null);
                 }
                 }
         }

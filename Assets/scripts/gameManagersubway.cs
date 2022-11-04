@@ -12,6 +12,7 @@ public class gameManagersubway : MonoBehaviour
     public bool initiatedLoop = false;
 
     public Deathreset dr;
+    public DialogueUI dm;
 
     public PlayerMovementFPS playermove;
 
@@ -35,6 +36,8 @@ public class gameManagersubway : MonoBehaviour
     public GameObject VendingMachine;
     public GameObject ElectrifyToilet;
 
+    public GameObject Monologues;
+
     public bool dead = false; // important *****
 
     private void Start()
@@ -50,12 +53,6 @@ public class gameManagersubway : MonoBehaviour
             timer_UI = GameObject.Find("Timer").GetComponent<TMP_Text>();
         }
 
-        foreach (Transform child in Friend.transform)
-        {
-            child.gameObject.SetActive(false);
-        }
-
-        Friend.transform.GetChild(death_count).gameObject.SetActive(true);
         SceneReset();
     }
 
@@ -138,7 +135,17 @@ public class gameManagersubway : MonoBehaviour
         //newspaper - killer
         var newsnum = killer_death ? 1 : 0;
         Newspaper.transform.GetChild(newsnum).gameObject.SetActive(true);
+        
+        
+        foreach (Transform child in Friend.transform)
+        {
+            child.gameObject.SetActive(false);
+        }
 
+        Friend.transform.GetChild(death_count).gameObject.SetActive(true);
 
+        var mono = Monologues.transform.GetChild(death_count).gameObject.GetComponent<DialogueLoad>();
+        //monologue 
+        dm.LoadDialogue(mono);
     }
 }

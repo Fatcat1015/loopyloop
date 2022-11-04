@@ -25,11 +25,12 @@ public class Deathreset : MonoBehaviour
     {
         gameObject.GetComponent<PlayerMovementFPS>().enabled = false;
         blackscreen.SetActive(true);
+        gameObject.transform.position = respawnPos.transform.position;
     }
 
     public void resetPos()
     {
-        gameObject.transform.position = respawnPos.transform.position;
+        gm.dead = false;
         blackscreen.SetActive(false);
         gameObject.GetComponent<PlayerMovementFPS>().enabled = true;
     }

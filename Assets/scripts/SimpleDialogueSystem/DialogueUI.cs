@@ -30,7 +30,7 @@ public class DialogueUI : MonoBehaviour
     public float typewriterEffectTime = 0.01f;
     public bool typewriting = false;
 
-    public GameObject dialogueLoader = null;
+    public GameObject dialogueLoader;
 
     public RayCastFPS rc;
 
@@ -53,7 +53,7 @@ public class DialogueUI : MonoBehaviour
         }
     }
 
-    public void LoadDialogue()
+    public void LoadDialogue(DialogueLoad DL)
     {
         /*
         StreamReader inp_stm = new StreamReader(filepath);
@@ -72,7 +72,7 @@ public class DialogueUI : MonoBehaviour
 
         if(allDialogue.Count == 0)
         {
-            DialogueLoad dl = dialogueLoader.GetComponent<DialogueLoad>();
+                DialogueLoad dl = DL == null ?  dialogueLoader.GetComponent<DialogueLoad>() : DL;
 
             for (int i = 0; i < dl.Dialogues.Count; i++)
             {
