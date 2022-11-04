@@ -33,106 +33,85 @@ public class RayCastFPS : MonoBehaviour
     }
 
     private void Update()
-    { 
+    {
         //actual code
+        RaycastCheck(Interactable_Layer, interacting_object, pp_layernum);
+        //RaycastCheck(descriptionOnly_Layer, description_object, pp_layernum);
+    }
+
+    //function to check raycast in a specific layer, and displaying the name of the object into the UI
+    void RaycastCheck(LayerMask layer_checking, GameObject selected_obj, int changing_layer)
+    {
         ray = new Ray(this.transform.position, this.transform.forward);
         RaycastHit hit;
 
-        //determine if still focused on the previous object
-        if (Physics.Raycast(ray, out hit, rayhitdistance, postprocessing_layer) )
+        if (Physics.Raycast(ray, out hit, rayhitdistance, layer_checking))
         {
-            if(hit.transform.gameObject == interacting_object || hit.transform.gameObject == description_object)
+            Debug.Log("Hit");
+            //get rid of outline
+            if (selected_obj != null && selected_obj != hit.transform.gameObject)
             {
-                object_focused = true;
+                SetLayerAllChildren(selected_obj.transform, 0);
             }
-            else
-            {
-                object_focused = false;
-            }
-            
+            selected_obj = hit.transform.gameObject;
+            //change outline postprosessing layer of the selected object
+
+            SetLayerAllChildren(selected_obj.transform, changing_layer);
         }
         else
         {
-            object_focused = false;
-        }
-
-        //interactable obj
-        if (Physics.Raycast(ray, out hit, rayhitdistance, Interactable_Layer))
-        {
-            interacting_object = hit.transform.gameObject;
-            //change outline postprosessing layer of the selected object
-            if (interacting_object.layer != pp_layernum)
+            if (selected_obj != null)
             {
-                interacting_object.layer = pp_layernum;
+                SetLayerAllChildren(selected_obj.transform, 0);
+                selected_obj.layer = Mathf.RoundToInt(Mathf.Log(Interactable_Layer.value, 2));
+                selected_obj = null;
             }
-        }
 
-
-        else if (interacting_object != null && !object_focused)//get rid of outline
-        {
-            
-                interacting_object.layer = interact_layernum;
-                interacting_object = null;
-            
-            
         }
 
         //display object name
-
-        if (interacting_object != null)
+        if (selected_obj != null)
         {
-            crosshair_txt.text = "press E to interact";
-                //interact with objects
-            if (Input.GetKeyDown(KeyCode.E))
-            {
-                //load dialogues for interacting if there's one.
-                if (interacting_object.GetComponent<DialogueLoad>() != null)
-                {
-                    if (!dm.speaking)
-                    {
-                        dm.dialogueLoader = interacting_object;
-                        dm.LoadDialogue();
-                    }
-                }
-            }
+            crosshair_txt.text = "press E to interact with " + selected_obj.name;
+            //check for e if there's an object selected
+            EforDialogue(selected_obj);
         }
         else
         {
             crosshair_txt.text = "";
         }
 
-        //description obj
-        if (Physics.Raycast(ray, out hit, rayhitdistance, descriptionOnly_Layer))
+
+    }
+
+    void EforDialogue(GameObject selected_obj)
+    {
+        if (selected_obj != null)
         {
-            description_object = hit.transform.gameObject;
-            if(description_object.layer != pp_layernum)
-            description_object.layer = pp_layernum;
-        }
-        else
-        {
-            if(description_object != null && !object_focused)
+            //interact with objects
+            if (Input.GetKeyDown(KeyCode.E))
             {
-               
-                    description_object.layer = description_layernum;
-                    description_object = null;
-               
-                    
+                //load dialogues for interacting if there's one.
+                if (selected_obj.GetComponent<DialogueLoad>() != null)
+                {
+                    if (!dm.speaking)
+                    {
+                        dm.dialogueLoader = selected_obj;
+                        dm.LoadDialogue();
+                    }
+                }
             }
-            
         }
+        
+    }
 
-        //see description of objects
-        if(description_object != null)
+    void SetLayerAllChildren(Transform root, int layer)
+    {
+        var children = root.GetComponentsInChildren<Transform>(includeInactive: true);
+        foreach (var child in children)
         {
-                if (!dm.speaking)
-                {
-                if (Input.GetKeyDown(KeyCode.E))
-                {
-                    dm.dialogueLoader = description_object;
-                    dm.LoadDialogue();
-                }
-                }
+            //Debug.Log(child.name);
+            child.gameObject.layer = layer;
         }
-
     }
 }
