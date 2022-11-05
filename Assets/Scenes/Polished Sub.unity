@@ -413,7 +413,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 1164, y: 174}
+  m_AnchoredPosition: {x: 955, y: 174}
   m_SizeDelta: {x: 200, y: 50}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &97264153
@@ -438,8 +438,9 @@ MonoBehaviour:
       m_Calls: []
   m_text: Press E to continue...
   m_isRightToLeft: 0
-  m_fontAsset: {fileID: 11400000, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
-  m_sharedMaterial: {fileID: 2180264, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
+  m_fontAsset: {fileID: 11400000, guid: 33b51a2643d69164d9f25048f2f0ad39, type: 2}
+  m_sharedMaterial: {fileID: 2442767378768830514, guid: 33b51a2643d69164d9f25048f2f0ad39,
+    type: 2}
   m_fontSharedMaterials: []
   m_fontMaterial: {fileID: 0}
   m_fontMaterials: []
@@ -499,7 +500,7 @@ MonoBehaviour:
   m_VertexBufferAutoSizeReduction: 0
   m_useMaxVisibleDescender: 1
   m_pageToDisplay: 1
-  m_margin: {x: -182.95357, y: 0, z: 0, w: 0}
+  m_margin: {x: -182.95357, y: 0, z: -40.939957, w: 0}
   m_isUsingLegacyAnimationComponent: 0
   m_isVolumetricText: 0
   m_hasFontAssetChanged: 0
@@ -1431,8 +1432,9 @@ MonoBehaviour:
       m_Calls: []
   m_text: Timer
   m_isRightToLeft: 0
-  m_fontAsset: {fileID: 11400000, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
-  m_sharedMaterial: {fileID: 2180264, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
+  m_fontAsset: {fileID: 11400000, guid: 33b51a2643d69164d9f25048f2f0ad39, type: 2}
+  m_sharedMaterial: {fileID: 2442767378768830514, guid: 33b51a2643d69164d9f25048f2f0ad39,
+    type: 2}
   m_fontSharedMaterials: []
   m_fontMaterial: {fileID: 0}
   m_fontMaterials: []
@@ -3435,7 +3437,7 @@ Mesh:
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_Name: pb_Mesh31120
+  m_Name: pb_Mesh31332
   serializedVersion: 10
   m_SubMeshes:
   - serializedVersion: 2
@@ -7917,7 +7919,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: -1202, y: 518}
+  m_AnchoredPosition: {x: -982, y: 510}
   m_SizeDelta: {x: 200, y: 50}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1102750500
@@ -7942,8 +7944,9 @@ MonoBehaviour:
       m_Calls: []
   m_text: nametext
   m_isRightToLeft: 0
-  m_fontAsset: {fileID: 11400000, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
-  m_sharedMaterial: {fileID: 2180264, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
+  m_fontAsset: {fileID: 11400000, guid: 33b51a2643d69164d9f25048f2f0ad39, type: 2}
+  m_sharedMaterial: {fileID: 2442767378768830514, guid: 33b51a2643d69164d9f25048f2f0ad39,
+    type: 2}
   m_fontSharedMaterials: []
   m_fontMaterial: {fileID: 0}
   m_fontMaterials: []
@@ -8303,7 +8306,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: -987.0383, y: 397.98987}
+  m_AnchoredPosition: {x: -788, y: 397.98987}
   m_SizeDelta: {x: 200, y: 50}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1174161430
@@ -8328,8 +8331,9 @@ MonoBehaviour:
       m_Calls: []
   m_text: New Text
   m_isRightToLeft: 0
-  m_fontAsset: {fileID: 11400000, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
-  m_sharedMaterial: {fileID: 2180264, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
+  m_fontAsset: {fileID: 11400000, guid: 33b51a2643d69164d9f25048f2f0ad39, type: 2}
+  m_sharedMaterial: {fileID: 2442767378768830514, guid: 33b51a2643d69164d9f25048f2f0ad39,
+    type: 2}
   m_fontSharedMaterials: []
   m_fontMaterial: {fileID: 0}
   m_fontMaterials: []
@@ -8389,7 +8393,7 @@ MonoBehaviour:
   m_VertexBufferAutoSizeReduction: 0
   m_useMaxVisibleDescender: 1
   m_pageToDisplay: 1
-  m_margin: {x: -208.0527, y: 0, z: -2178.4421, w: -228.85442}
+  m_margin: {x: -208.0527, y: 0, z: -1728.6229, w: -228.85442}
   m_isUsingLegacyAnimationComponent: 0
   m_isVolumetricText: 0
   m_hasFontAssetChanged: 0
@@ -9285,8 +9289,8 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: -3, y: 339.58063}
-  m_SizeDelta: {x: 2920.1, y: 575.8613}
+  m_AnchoredPosition: {x: 20.925106, y: 359.82312}
+  m_SizeDelta: {x: 2959.999, y: 755.3472}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1344155338
 MonoBehaviour:
@@ -9301,14 +9305,14 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_Material: {fileID: 0}
-  m_Color: {r: 1, g: 1, b: 1, a: 1}
+  m_Color: {r: 0.8018868, g: 0.70570356, b: 0.5325739, a: 1}
   m_RaycastTarget: 1
   m_RaycastPadding: {x: 0, y: 0, z: 0, w: 0}
   m_Maskable: 1
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_Sprite: {fileID: 21300000, guid: f2a9c6fd479be93408d871802be90db2, type: 3}
+  m_Sprite: {fileID: 21300000, guid: fdf447e577aca7e4d9c40622d8bfe8a6, type: 3}
   m_Type: 0
   m_PreserveAspect: 0
   m_FillCenter: 1
@@ -13028,7 +13032,7 @@ Mesh:
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_Name: pb_Mesh32712
+  m_Name: pb_Mesh32964
   serializedVersion: 10
   m_SubMeshes:
   - serializedVersion: 2
@@ -13389,7 +13393,7 @@ Mesh:
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_Name: pb_Mesh35420
+  m_Name: pb_Mesh35700
   serializedVersion: 10
   m_SubMeshes:
   - serializedVersion: 2
