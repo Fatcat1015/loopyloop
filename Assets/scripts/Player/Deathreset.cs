@@ -12,7 +12,7 @@ public class Deathreset : MonoBehaviour
     {
         if (other.tag == "death")//if collided with death object 
         {
-             gm.initiatedLoop = true;
+            StartDying();            
             //specify which death trigger
             if(other.gameObject.name == "killer trigger")
             gm.killer_death = true;
@@ -20,6 +20,10 @@ public class Deathreset : MonoBehaviour
 
     }
 
+    public void StartDying()
+    {
+        gm.initiatedLoop = true;
+    }
 
     public void predeath()
     {

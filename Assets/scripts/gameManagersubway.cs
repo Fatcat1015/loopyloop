@@ -53,7 +53,7 @@ public class gameManagersubway : MonoBehaviour
             timer_UI = GameObject.Find("Timer").GetComponent<TMP_Text>();
         }
 
-        SceneReset();
+        SceneReset(1);
     }
 
     void Update()
@@ -126,14 +126,33 @@ public class gameManagersubway : MonoBehaviour
         }
         timer = 0;
         //change dialogues according to the loop
-        SceneReset();
+        SceneReset(0);
         dead = true;
     }
 
-    void SceneReset()
+    void SceneReset(int index)
     {
+        if(index == 0)
+        {
+            /*foreach (Transform child in Friend.transform)
+            {
+                child.gameObject.SetActive(false);
+            }
+            foreach (Transform child in Newspaper.transform)
+            {
+                child.gameObject.SetActive(false);
+            }
+            foreach (Transform child in VendingMachine.transform)
+            {
+                child.gameObject.SetActive(false);
+            }*/
+        }
         //newspaper - killer
         var newsnum = killer_death ? 1 : 0;
+        foreach (Transform child in Newspaper.transform)
+        {
+            child.gameObject.SetActive(false);
+        }
         Newspaper.transform.GetChild(newsnum).gameObject.SetActive(true);
         
         

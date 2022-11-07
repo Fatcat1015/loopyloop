@@ -24,6 +24,7 @@ public class RayCastFPS : MonoBehaviour
     public TMP_Text crosshair_txt;
 
     public DialogueUI dm;
+    public Deathreset dr;
 
     private void Start()
     {
@@ -81,11 +82,18 @@ public class RayCastFPS : MonoBehaviour
 
         if (interacting_object != null)
         {
-            crosshair_txt.text = "press E to interact with " + interacting_object.name;
+            crosshair_txt.text = "press E to " + interacting_object.name;
                 //interact with objects
             if (Input.GetKeyDown(KeyCode.E))
             {
+                //kill player if its death object
+                if (interacting_object.CompareTag("death"))
+                {
+                    //killplayer
+                    dr.StartDying();
+                }else
                 //load dialogues for interacting if there's one.
+
                 if (interacting_object.GetComponent<DialogueLoad>() != null)
                 {
                     if (!dm.speaking)
