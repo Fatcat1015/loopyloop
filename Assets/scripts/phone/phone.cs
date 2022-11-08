@@ -131,28 +131,59 @@ public class phone : MonoBehaviour
     {
         if(GM.GetComponent<gameManagersubway>().vendingMachine_death == true)
         {
-           gallery.Add(Death1);
+            if (gallery.Contains(Death1))
+            {
+            }
+            else
+            {
+                gallery.Add(Death1);
+            }
+
         }
 
 
         if (GM.GetComponent<gameManagersubway>().light_death == true)
         {
-            gallery.Add(Death2);
+            if (gallery.Contains(Death2))
+            {
+            }
+            else
+            {
+                gallery.Add(Death2);
+            }
         }
 
         if (GM.GetComponent<gameManagersubway>().securityCam_death == true)
         {
-            gallery.Add(Death3);
+            if (gallery.Contains(Death1))
+            {
+            }
+            else
+            {
+                gallery.Add(Death3);
+            }
         }
 
         if (GM.GetComponent<gameManagersubway>().electricity_death == true)
         {
-            gallery.Add(Death4);
+            if (gallery.Contains(Death1))
+            {
+            }
+            else
+            {
+                gallery.Add(Death4);
+            }
         }
 
         if (GM.GetComponent<gameManagersubway>().killer_death == true)
         {
-            gallery.Add(Death5);
+            if (gallery.Contains(Death5))
+            {
+            }
+            else
+            {
+                gallery.Add(Death5);
+            }
         }
 
     }
