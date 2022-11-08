@@ -8018,7 +8018,7 @@ MonoBehaviour:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1126805416}
-  m_Enabled: 1
+  m_Enabled: 0
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: fe87c0e1cc204ed48ad3b37840f39efc, type: 3}
   m_Name: 
@@ -8031,7 +8031,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_Sprite: {fileID: 21300000, guid: b23040eda90ef904a837a5f2f6471dc7, type: 3}
+  m_Sprite: {fileID: 21300000, guid: e9e41cd9fcf25aa4c812cbec0b295f96, type: 3}
   m_Type: 0
   m_PreserveAspect: 0
   m_FillCenter: 1
@@ -9049,9 +9049,12 @@ MonoBehaviour:
   pos2: {fileID: 55835959}
   phone_active: 0
   gal_active: 0
+  gal_show: 0
   get_phone: 304
   open_phone: 102
   open_gal: 103
+  gal_forward: 118
+  gal_back: 99
   phoneList:
   - {fileID: 21300000, guid: 5797d847ad3e1cc4f8c07e73f5318f31, type: 3}
   - {fileID: 21300000, guid: 3009e934e07ee7c449a53d63af8bc647, type: 3}

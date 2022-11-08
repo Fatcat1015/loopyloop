@@ -1,8 +1,10 @@
 using System;
 using System.Collections;
 using System.Collections.Generic;
+using System.Linq;
 using UnityEngine;
 using UnityEngine.UI;
+using static Cinemachine.CinemachineFreeLook;
 
 public class phone : MonoBehaviour
 {
@@ -14,14 +16,19 @@ public class phone : MonoBehaviour
 
     [SerializeField] bool phone_active = false;
     [SerializeField] bool gal_active = false;
+    public bool gal_show = false;
 
     public KeyCode get_phone;
     public KeyCode open_phone;
     public KeyCode open_gal;
 
+    public KeyCode gal_forward;
+    public KeyCode gal_back;
+
     //phone and gallery
     public Sprite[] phoneList;
     public Sprite[] gallery;
+    int i = 0;
 
     //death pictures
     public Sprite Death1;
@@ -37,6 +44,8 @@ public class phone : MonoBehaviour
         my_phone.transform.position = pos1.transform.position;
         GetComponent<Image>().sprite = phoneList[0];
         my_gallery.GetComponent<Image>().enabled = false;
+        my_gallery.GetComponent<Image>().sprite = gallery[0];
+        gal_active = false;
     }
 
     private void Update()
@@ -51,6 +60,9 @@ public class phone : MonoBehaviour
         {
             my_phone.transform.position = pos1.transform.position;
             phone_active = false;
+            gal_active = false;
+            gal_show = false;
+            my_gallery.GetComponent<Image>().enabled = false;
             GetComponent<Image>().sprite = phoneList[0];
         }
 
@@ -63,22 +75,53 @@ public class phone : MonoBehaviour
         {
             GetComponent<Image>().sprite = phoneList[0];
             gal_active = false;
+            gal_show = false;
+            my_gallery.GetComponent<Image>().enabled = false;
         }
 
 
         //open gallery
         if (Input.GetKeyDown(open_gal) && gal_active == true)
         {
-            GetComponent<Image>().sprite = phoneList[2];
-            my_gallery.GetComponent<Image>().enabled = true;
+            GetComponent<Image>().sprite = phoneList[2];           
+            gal_show = true;
+            
         }
 
+        //gallery code
+        if(gal_show == true)
+        {
+            my_gallery.GetComponent<Image>().enabled = true;
+            // my_gallery.GetComponent<Image>().sprite = gallery[0];
 
+            GalleryControls();
+        }
 
-
-
+        print(gallery.Count());
+        print(i);
     }
 
+
+     void GalleryControls()
+    {
+        
+        
+        
+        //my_gallery.GetComponent<Image>().sprite = gallery[i];
+
+        if (Input.GetKeyDown(gal_forward) && i < gallery.Count()+1)
+        {           
+            i++;
+            my_gallery.GetComponent<Image>().sprite = gallery[i];
+        
+        }
+
+        if (Input.GetKeyDown(gal_back) && i > -1)
+        {
+            i--;
+            my_gallery.GetComponent<Image>().sprite = gallery[i];
+        }
+    }
 
 
 }
