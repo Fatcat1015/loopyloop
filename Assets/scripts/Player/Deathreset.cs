@@ -12,29 +12,29 @@ public class Deathreset : MonoBehaviour
     {
         if (other.tag == "death")//if collided with death object 
         {
-            StartCoroutine(gm.timeLoop());
-            //StartCoroutine(deathBlack());
-            //this.gameObject.transform.position = respawnPos.transform.position;
+            StartDying();            
+            //specify which death trigger
+            if(other.gameObject.name == "killer trigger")
+            gm.killer_death = true;
         }
+
     }
 
-    IEnumerator deathBlack()
+    public void StartDying()
     {
-        predeath();
-        yield return new WaitForSeconds(5);
-        resetPos();
+        gm.initiatedLoop = true;
     }
-
 
     public void predeath()
     {
         gameObject.GetComponent<PlayerMovementFPS>().enabled = false;
         blackscreen.SetActive(true);
+        gameObject.transform.position = respawnPos.transform.position;
     }
 
     public void resetPos()
     {
-        gameObject.transform.position = respawnPos.transform.position;
+        gm.dead = false;
         blackscreen.SetActive(false);
         gameObject.GetComponent<PlayerMovementFPS>().enabled = true;
     }

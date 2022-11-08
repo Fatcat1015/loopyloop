@@ -9,9 +9,10 @@ public class gameManagersubway : MonoBehaviour
 
     public float timer = 0;
     public float timer_up = 300;
-    public static bool initiatedLoop = false;
+    public bool initiatedLoop = false;
 
     public Deathreset dr;
+    public DialogueUI dm;
 
     public PlayerMovementFPS playermove;
 
@@ -20,17 +21,24 @@ public class gameManagersubway : MonoBehaviour
 
     public TMP_Text timer_UI;
 
-    /*
-    private void Awake()
-    {
-        if (Instance != null)
-        {
-            Destroy(gameObject);
-            return;
-        }
-        Instance = this;
-        DontDestroyOnLoad(gameObject);
-    }*/
+    public bool died = false;
+    public bool vendingMachine_death = false;
+    public bool light_death = false;
+    public bool securityCam_death = false;
+    public bool electricity_death = false;
+    public bool killer_death = false;
+
+    public int death_count = 0;
+
+    public GameObject Friend;
+    public GameObject Newspaper;
+    public GameObject LooseLight;
+    public GameObject VendingMachine;
+    public GameObject ElectrifyToilet;
+
+    public GameObject Monologues;
+
+    public bool dead = false; // important *****
 
     private void Start()
     {
@@ -44,6 +52,8 @@ public class gameManagersubway : MonoBehaviour
         {
             timer_UI = GameObject.Find("Timer").GetComponent<TMP_Text>();
         }
+
+        SceneReset(1);
     }
 
     void Update()
@@ -58,7 +68,7 @@ public class gameManagersubway : MonoBehaviour
             displayMinutes = Mathf.FloorToInt(timer / 60).ToString();
         }
 
-        if (timer % 60 < 10)
+        if (Mathf.RoundToInt(timer % 60) < 10)
         {
             displaySeconds = "0" + Mathf.RoundToInt(timer%60).ToString();
         }
@@ -76,34 +86,85 @@ public class gameManagersubway : MonoBehaviour
 
         if (initiatedLoop)
         {
-            //show how you died
-                //reset player
-                //deathreset codes
-                dr.resetPos();
-                //timer = 0;
-                initiatedLoop = false;
-                //timer += Time.deltaTime;
-
+            player_died();
+            initiatedLoop = false;
         }
         else
         {
             //endScreen.SetActive(false);
             if (timer >= timer_up)
             {
-                StartCoroutine(timeLoop());
+                player_died();
+                //StartCoroutine(timeLoop());
             }
             else
             {
                 timer += Time.deltaTime;
             }
         }
+
+        if (dead)
+        {
+            if(Input.GetKeyDown(KeyCode.R))
+            dr.resetPos();
+        }
+
     }
 
-    public IEnumerator timeLoop()//initiate timeloop after a few  seconds
+    void player_died()
     {
+        //reset player
+        //deathreset codes
         dr.predeath();
-        yield return new WaitForSeconds(5);
-        initiatedLoop = true;
+        death_count += 1;
+        died = true;
+        //set the state of dialogue w friend
+        if (death_count <=6)
+        {
+            Friend.transform.GetChild(death_count - 1).gameObject.SetActive(false);
+            Friend.transform.GetChild(death_count).gameObject.SetActive(true);
+        }
         timer = 0;
+        //change dialogues according to the loop
+        SceneReset(0);
+        dead = true;
+    }
+
+    void SceneReset(int index)
+    {
+        if(index == 0)
+        {
+            /*foreach (Transform child in Friend.transform)
+            {
+                child.gameObject.SetActive(false);
+            }
+            foreach (Transform child in Newspaper.transform)
+            {
+                child.gameObject.SetActive(false);
+            }
+            foreach (Transform child in VendingMachine.transform)
+            {
+                child.gameObject.SetActive(false);
+            }*/
+        }
+        //newspaper - killer
+        var newsnum = killer_death ? 1 : 0;
+        foreach (Transform child in Newspaper.transform)
+        {
+            child.gameObject.SetActive(false);
+        }
+        Newspaper.transform.GetChild(newsnum).gameObject.SetActive(true);
+        
+        
+        foreach (Transform child in Friend.transform)
+        {
+            child.gameObject.SetActive(false);
+        }
+
+        Friend.transform.GetChild(death_count).gameObject.SetActive(true);
+
+        var mono = Monologues.transform.GetChild(death_count).gameObject.GetComponent<DialogueLoad>();
+        //monologue 
+        dm.LoadDialogue(mono);
     }
 }
