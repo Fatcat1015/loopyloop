@@ -30,6 +30,8 @@ public class gameManagersubway : MonoBehaviour
 
     public int death_count = 0;
 
+    public GameObject Player;
+
     public GameObject Friend;
     public GameObject Newspaper;
     public GameObject LooseLight;
@@ -37,6 +39,9 @@ public class gameManagersubway : MonoBehaviour
     public GameObject ElectrifyToilet;
 
     public GameObject Monologues;
+
+    public bool Light_Fell = false;
+    public int Light_fell_timer = 5;
 
     public bool dead = false; // important *****
 
@@ -109,6 +114,21 @@ public class gameManagersubway : MonoBehaviour
             dr.resetPos();
         }
 
+        if (timer >= Light_fell_timer && !Light_Fell)
+        {
+            //drop light
+            LooseLight.GetComponent<Animator>().SetBool("fall", true);
+            Player.GetComponent<Animator>().enabled = true;
+            Light_Fell = true; 
+        }
+
+        if (Light_Fell && Player.GetComponent<Animator>().GetCurrentAnimatorStateInfo(0).normalizedTime > 1)
+        {
+            // Avoid any reload.
+            Debug.Log("fini");
+            Player.GetComponent<Animator>().enabled = false;
+        }
+
     }
 
     void player_died()
@@ -132,7 +152,10 @@ public class gameManagersubway : MonoBehaviour
 
     void SceneReset(int index)
     {
-        if(index == 0)
+        Light_Fell = false;
+        Player.GetComponent<Animator>().enabled = false;
+
+        if (index == 0)
         {
             /*foreach (Transform child in Friend.transform)
             {
@@ -167,4 +190,6 @@ public class gameManagersubway : MonoBehaviour
         //monologue 
         dm.LoadDialogue(mono);
     }
+
+
 }

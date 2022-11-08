@@ -34,6 +34,8 @@ public class DialogueUI : MonoBehaviour
 
     public RayCastFPS rc;
 
+    public bool afterDialogue_die = false;
+
     private void Start()
     {
         //hide all dialogue components
@@ -106,7 +108,11 @@ public class DialogueUI : MonoBehaviour
         {
             StartCoroutine(TypeWriterText());
         }
-        
+
+        if (afterDialogue_die)
+        {
+            //disable player movement
+        }
 
     }
 
@@ -154,6 +160,13 @@ public class DialogueUI : MonoBehaviour
         StartCoroutine(CoolDown());
 
         parentobject.SetActive(false);
+
+        if (afterDialogue_die) {
+            //kill player
+
+            afterDialogue_die = false;
+        }
+
     }
 
     IEnumerator CoolDown()

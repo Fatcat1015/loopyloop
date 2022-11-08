@@ -86,12 +86,7 @@ public class RayCastFPS : MonoBehaviour
                 //interact with objects
             if (Input.GetKeyDown(KeyCode.E))
             {
-                //kill player if its death object
-                if (interacting_object.CompareTag("death"))
-                {
-                    //killplayer
-                    dr.StartDying();
-                }else
+              
                 //load dialogues for interacting if there's one.
 
                 if (interacting_object.GetComponent<DialogueLoad>() != null)
@@ -101,6 +96,12 @@ public class RayCastFPS : MonoBehaviour
                         dm.dialogueLoader = interacting_object;
                         dm.LoadDialogue(null);
                     }
+                }
+                //kill player if its death object
+                if (interacting_object.CompareTag("death"))
+                {
+                    //killplayer
+                    dm.afterDialogue_die = true;
                 }
             }
         }
