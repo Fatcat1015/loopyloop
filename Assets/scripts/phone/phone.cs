@@ -2,6 +2,7 @@ using System;
 using System.Collections;
 using System.Collections.Generic;
 using System.Linq;
+using Unity.VisualScripting;
 using UnityEngine;
 using UnityEngine.UI;
 using static Cinemachine.CinemachineFreeLook;
@@ -27,8 +28,10 @@ public class phone : MonoBehaviour
 
     //phone and gallery
     public Sprite[] phoneList;
-    public Sprite[] gallery;
+    //public Sprite[]gallery;
     int i = 0;
+
+    public List<Sprite> gallery = new List<Sprite>();
 
     //death pictures
     public Sprite Death1;
@@ -37,7 +40,7 @@ public class phone : MonoBehaviour
     public Sprite Death4;
     public Sprite Death5;
 
-
+    public GameObject GM;
 
     private void Start()
     {
@@ -92,36 +95,66 @@ public class phone : MonoBehaviour
         if(gal_show == true)
         {
             my_gallery.GetComponent<Image>().enabled = true;
-            // my_gallery.GetComponent<Image>().sprite = gallery[0];
-
             GalleryControls();
         }
 
         print(gallery.Count());
         print(i);
+
+
+        IfIDie();
     }
 
 
      void GalleryControls()
     {
         
-        
-        
-        //my_gallery.GetComponent<Image>().sprite = gallery[i];
 
-        if (Input.GetKeyDown(gal_forward) && i < gallery.Count()+1)
+        if (Input.GetKeyDown(gal_forward) && i < gallery.Count())
         {           
             i++;
             my_gallery.GetComponent<Image>().sprite = gallery[i];
         
         }
 
-        if (Input.GetKeyDown(gal_back) && i > -1)
+        if (Input.GetKeyDown(gal_back) && i > 0)
         {
             i--;
             my_gallery.GetComponent<Image>().sprite = gallery[i];
         }
+
+       
     }
 
+
+    public void IfIDie()
+    {
+        if(GM.GetComponent<gameManagersubway>().vendingMachine_death == true)
+        {
+           gallery.Add(Death1);
+        }
+
+
+        if (GM.GetComponent<gameManagersubway>().light_death == true)
+        {
+            gallery.Add(Death2);
+        }
+
+        if (GM.GetComponent<gameManagersubway>().securityCam_death == true)
+        {
+            gallery.Add(Death3);
+        }
+
+        if (GM.GetComponent<gameManagersubway>().electricity_death == true)
+        {
+            gallery.Add(Death4);
+        }
+
+        if (GM.GetComponent<gameManagersubway>().killer_death == true)
+        {
+            gallery.Add(Death5);
+        }
+
+    }
 
 }
