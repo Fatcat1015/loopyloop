@@ -38,7 +38,7 @@ RenderSettings:
   m_ReflectionIntensity: 1
   m_CustomReflection: {fileID: 0}
   m_Sun: {fileID: 0}
-  m_IndirectSpecularColor: {r: 0.008680698, g: 0.008848519, b: 0.01971401, a: 1}
+  m_IndirectSpecularColor: {r: 0.008625746, g: 0.0088489335, b: 0.019664578, a: 1}
   m_UseRadianceAmbientProbe: 0
 --- !u!157 &3
 LightmapSettings:
@@ -9890,7 +9890,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 0feec4abd0e63b046973b86187af6b15, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  d: {fileID: 0}
+  d: {fileID: 965397092}
 --- !u!1 &1468287991
 GameObject:
   m_ObjectHideFlags: 0
@@ -14291,7 +14291,7 @@ MonoBehaviour:
   ElectrifyToilet: {fileID: 0}
   Monologues: {fileID: 625333384}
   Light_Fell: 0
-  Light_fell_timer: 5
+  Light_fell_timer: 45
   dead: 0
 --- !u!4 &1968735637
 Transform:
@@ -27724,6 +27724,7 @@ GameObject:
   - component: {fileID: 4046677418070342755}
   - component: {fileID: 4046677418070342756}
   - component: {fileID: 4046677418070342757}
+  - component: {fileID: 4046677418070342758}
   m_Layer: 0
   m_Name: newLIGHT_UseThisONe
   m_TagString: Untagged
@@ -43518,6 +43519,19 @@ Rigidbody:
   m_Interpolate: 0
   m_Constraints: 0
   m_CollisionDetection: 0
+--- !u!65 &4046677418070342758
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1657653606242059477}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 0
+  serializedVersion: 2
+  m_Size: {x: 1, y: 1, z: 1}
+  m_Center: {x: 0, y: 0, z: 0}
 --- !u!4 &4051047264183051160
 Transform:
   m_ObjectHideFlags: 0

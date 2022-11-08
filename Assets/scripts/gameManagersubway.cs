@@ -122,10 +122,10 @@ public class gameManagersubway : MonoBehaviour
             Light_Fell = true; 
         }
 
-        if (Light_Fell && Player.GetComponent<Animator>().GetCurrentAnimatorStateInfo(0).normalizedTime > 1)
+        if (timer >= Light_fell_timer + 5)
         {
             // Avoid any reload.
-            Debug.Log("fini");
+            //Debug.Log("fini");
             Player.GetComponent<Animator>().enabled = false;
         }
 
