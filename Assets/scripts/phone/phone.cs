@@ -98,8 +98,6 @@ public class phone : MonoBehaviour
             GalleryControls();
         }
 
-        print(gallery.Count());
-        print(i);
 
 
         IfIDie();
