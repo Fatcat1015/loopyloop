@@ -2,6 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using TMPro;
+using UnityEngine.SceneManagement;
 
 public class gameManagersubway : MonoBehaviour
 {
@@ -28,6 +29,8 @@ public class gameManagersubway : MonoBehaviour
     public bool electricity_death = false;
     public bool killer_death = false;
     public bool securityCam_death = false;
+
+    public bool canendgame = false;
 
     public int death_count = 0;
 
@@ -61,6 +64,7 @@ public class gameManagersubway : MonoBehaviour
     public bool hint_securityCam = false;
     public bool hint_friendPhone = false;
 
+    public GameObject finalChoice;
 
     private void Start()
     {
@@ -74,12 +78,17 @@ public class gameManagersubway : MonoBehaviour
         {
             timer_UI = GameObject.Find("Timer").GetComponent<TMP_Text>();
         }
-
+        finalChoice.SetActive(false);
         SceneReset(1);
     }
 
     void Update()
     {
+        if (hint_ad && hint_friendPhone && hint_securityCam)
+        {
+            canendgame = true;
+        }
+
         //convert timer to clock format
         if(timer/60 < 10)
         {
@@ -186,7 +195,6 @@ public class gameManagersubway : MonoBehaviour
         //reset light pos
         Light_Fell = false;
         LooseLight.GetComponent<Animator>().SetBool("fall", false);
-        Player.GetComponent<Animator>().enabled = false;
 
         if (index == 0)//reset scene when initializing not used yet*
         {
@@ -242,4 +250,16 @@ public class gameManagersubway : MonoBehaviour
         item.transform.GetChild(set_description_num).gameObject.SetActive(true);
     }
 
+    public void endGame(bool win)
+    {
+        if (win)
+        {
+            SceneManager.LoadScene("win_End", LoadSceneMode.Single);
+        }
+        else
+        {
+            SceneManager.LoadScene("lose_End", LoadSceneMode.Single);
+
+        }
+    }
 }

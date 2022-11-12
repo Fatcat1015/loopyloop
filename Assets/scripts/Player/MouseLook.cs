@@ -13,36 +13,33 @@ public class MouseLook : MonoBehaviour
 
     public Quaternion originalRotationValue;
 
-    public bool FreezeMouse = false;
+    public bool freeMouse = false;
     // Start is called before the first frame update
     void Start()
     {
         Cursor.lockState = CursorLockMode.Locked;
-        //originalRotationValue = playerBody.rotation;
     }
 
     // Update is called once per frame
     void Update()
     {
-        float mouseX = Input.GetAxis("Mouse X") * mouseSensitivity * Time.deltaTime;
-        float mouseY = Input.GetAxis("Mouse Y") * mouseSensitivity * Time.deltaTime;
 
-        if (FreezeMouse)
+        if (freeMouse)
         {
-            playerBody.rotation = originalRotationValue;
-            xRotation = 0;
+            //Cursor.lockState = CursorLockMode.Confined;
         }
         else
         {
+            float mouseX = Input.GetAxis("Mouse X") * mouseSensitivity * Time.deltaTime;
+            float mouseY = Input.GetAxis("Mouse Y") * mouseSensitivity * Time.deltaTime;
+
+
             xRotation -= mouseY;
             xRotation = Mathf.Clamp(xRotation, -90f, 90f);
-        }
-            
-
             transform.localRotation = Quaternion.Euler(xRotation, 0f, 0f);
             playerBody.Rotate(Vector3.up * mouseX);
-      
-
+        }
         
     }
+
 }

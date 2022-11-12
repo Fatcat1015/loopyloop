@@ -9,6 +9,7 @@ TagManager:
   - ad
   - TrainTracks
   - Security Cam
+  - Friend
   layers:
   - Default
   - TransparentFX

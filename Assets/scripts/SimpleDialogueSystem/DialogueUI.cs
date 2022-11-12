@@ -33,6 +33,8 @@ public class DialogueUI : MonoBehaviour
     public GameObject dialogueLoader;
 
     public RayCastFPS rc;
+    public MouseLook ml;
+    public gameManagersubway gm;
 
     public bool afterDialogue_die = false;
 
@@ -67,6 +69,18 @@ public class DialogueUI : MonoBehaviour
                 allNames.Add(dl.Names[i]);
                 allDialogue.Add(dl.Dialogues[i]);
             }
+            if(dl != null)
+            {
+                if (gm.canendgame && dl.gameObject.CompareTag("Friend"))
+                {
+                    gm.finalChoice.SetActive(true);
+                }
+                else
+                {
+                    gm.finalChoice.SetActive(false);
+                }
+            }
+            
             dialogueLoader = null;
             if (allDialogue.Count > 0)
             {
@@ -78,6 +92,12 @@ public class DialogueUI : MonoBehaviour
     //function to start dialogues
     public void StartDialogue()
     {
+
+        //free mouse 
+
+        ml.freeMouse = true;
+        Cursor.lockState = CursorLockMode.None;
+
         speaking = true;
         parentobject.SetActive(true);
 
@@ -95,10 +115,7 @@ public class DialogueUI : MonoBehaviour
             StartCoroutine(TypeWriterText());
         }
 
-        if (afterDialogue_die)
-        {
-            //disable player movement
-        }
+        
 
     }
 
@@ -152,7 +169,8 @@ public class DialogueUI : MonoBehaviour
 
             afterDialogue_die = false;
         }
-
+        ml.freeMouse = false;
+        Cursor.lockState = CursorLockMode.Locked;
     }
 
     IEnumerator CoolDown()
