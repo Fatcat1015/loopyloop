@@ -14,8 +14,9 @@ public class Deathreset : MonoBehaviour
         {
             StartDying();            
             //specify which death trigger
-            if(other.gameObject.name == "killer trigger")
-            gm.killer_death = true;
+            if(other.gameObject.name == "killer trigger")gm.killer_death = true;
+
+            if (other.gameObject.name == "light trigger") gm.light_death = true;
         }
 
     }

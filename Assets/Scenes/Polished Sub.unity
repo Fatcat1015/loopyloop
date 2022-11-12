@@ -4356,13 +4356,6 @@ MonoBehaviour:
   descriptionOnly_Layer:
     serializedVersion: 2
     m_Bits: 8
-  postprocessing_layer:
-    serializedVersion: 2
-    m_Bits: 256
-  interact_layernum: 0
-  description_layernum: 0
-  pp_layernum: 0
-  object_focused: 0
   rayhitdistance: 15
   crosshair_txt: {fileID: 1493012193}
   dm: {fileID: 1330759169}
@@ -10796,9 +10789,9 @@ GameObject:
   - component: {fileID: 1561565945}
   - component: {fileID: 1561565944}
   m_Layer: 0
-  m_Name: LightFall_collider
+  m_Name: light trigger
   m_TagString: Untagged
-  m_Icon: {fileID: 5721338939258241955, guid: 0000000000000000d000000000000000, type: 0}
+  m_Icon: {fileID: 5132851093641282708, guid: 0000000000000000d000000000000000, type: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1

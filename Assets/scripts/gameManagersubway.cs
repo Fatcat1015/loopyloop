@@ -35,6 +35,7 @@ public class gameManagersubway : MonoBehaviour
     public GameObject Friend;
     public GameObject Newspaper;
     public GameObject LooseLight;
+    public GameObject LooseLight_trigger;
     public GameObject VendingMachine;
     public GameObject ElectrifyToilet;
 
@@ -96,11 +97,9 @@ public class gameManagersubway : MonoBehaviour
         }
         else
         {
-            //endScreen.SetActive(false);
             if (timer >= timer_up)
             {
                 player_died();
-                //StartCoroutine(timeLoop());
             }
             else
             {
@@ -119,12 +118,15 @@ public class gameManagersubway : MonoBehaviour
             //drop light
             LooseLight.GetComponent<Animator>().SetBool("fall", true);
             Player.GetComponent<Animator>().enabled = true;
-            Light_Fell = true; 
+            Light_Fell = true;
+            //activate light collider for five seconds
+            LooseLight_trigger.SetActive(true);
         }
 
         if (timer >= Light_fell_timer + 5)
         {
             Player.GetComponent<Animator>().enabled = false;
+            LooseLight_trigger.SetActive(false);
         }
 
     }
@@ -156,30 +158,18 @@ public class gameManagersubway : MonoBehaviour
         LooseLight.GetComponent<Animator>().SetBool("fall", false);
         Player.GetComponent<Animator>().enabled = false;
 
-        if (index == 0)
+        if (index == 0)//reset scene when initializing not used yet*
         {
-            /*foreach (Transform child in Friend.transform)
-            {
-                child.gameObject.SetActive(false);
-            }
-            foreach (Transform child in Newspaper.transform)
-            {
-                child.gameObject.SetActive(false);
-            }
-            foreach (Transform child in VendingMachine.transform)
-            {
-                child.gameObject.SetActive(false);
-            }*/
+
         }
+
+
         //newspaper - killer
-        var newsnum = killer_death ? 1 : 0;
-        foreach (Transform child in Newspaper.transform)
-        {
-            child.gameObject.SetActive(false);
-        }
-        Newspaper.transform.GetChild(newsnum).gameObject.SetActive(true);
-        
-        
+
+        SetDescription(killer_death, Newspaper);
+        SetDescription(light_death, LooseLight);
+
+
         foreach (Transform child in Friend.transform)
         {
             child.gameObject.SetActive(false);
@@ -192,5 +182,14 @@ public class gameManagersubway : MonoBehaviour
         dm.LoadDialogue(mono);
     }
 
+    void SetDescription(bool death_trigger, GameObject item)
+    {
+        var set_description_num = death_trigger ? 1 : 0;
+        foreach (Transform child in item.transform)
+        {
+            child.gameObject.SetActive(false);
+        }
+        item.transform.GetChild(set_description_num).gameObject.SetActive(true);
+    }
 
 }

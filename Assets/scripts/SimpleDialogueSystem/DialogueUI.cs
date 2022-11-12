@@ -57,20 +57,6 @@ public class DialogueUI : MonoBehaviour
 
     public void LoadDialogue(DialogueLoad DL)
     {
-        /*
-        StreamReader inp_stm = new StreamReader(filepath);
-
-        while (!inp_stm.EndOfStream)
-        {
-            string inp_ln = inp_stm.ReadLine();
-            // Do Something with the input. 
-            var arr = inp_ln.Split(":");
-            allNames.Add(arr[0]);
-            allDialogue.Add(arr[1]);
-        }
-        //finish reading
-        inp_stm.Close();
-        */
 
         if(allDialogue.Count == 0)
         {
@@ -188,24 +174,6 @@ public class DialogueUI : MonoBehaviour
         }
         typewriting = false;
     }
-
-    /*
-    void changePortrait()
-    {
-        for (int i = 0; i < allCharaterNames.Count; i++)
-        {
-            if (allCharaterNames[i] == NameText.text)
-            {
-                // Yes
-                Portrait.sprite = allPortraits[i];
-                break; //don't need to check the remaining ones now that we found one
-            }
-            else
-            {
-                Portrait.sprite = null;
-            }
-        }
-    }*/
 
 
 }

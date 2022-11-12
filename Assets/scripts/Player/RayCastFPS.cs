@@ -12,8 +12,6 @@ public class RayCastFPS : MonoBehaviour
     public LayerMask Interactable_Layer;
     public LayerMask descriptionOnly_Layer;
 
-    public bool object_focused = false;
-
     public Ray ray;
     public int rayhitdistance = 25;
 
@@ -21,10 +19,6 @@ public class RayCastFPS : MonoBehaviour
 
     public DialogueUI dm;
     public Deathreset dr;
-
-    private void Start()
-    {
-    }
 
     private void Update()
     { 
