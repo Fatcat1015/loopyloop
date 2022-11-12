@@ -11,10 +11,6 @@ public class RayCastFPS : MonoBehaviour
     public  GameObject description_object = null;
     public LayerMask Interactable_Layer;
     public LayerMask descriptionOnly_Layer;
-    public LayerMask postprocessing_layer;
-    public int interact_layernum;
-    public int description_layernum;
-    public int pp_layernum;
 
     public bool object_focused = false;
 
@@ -28,9 +24,6 @@ public class RayCastFPS : MonoBehaviour
 
     private void Start()
     {
-        interact_layernum = Mathf.RoundToInt(Mathf.Log(Interactable_Layer.value, 2));
-        description_layernum = Mathf.RoundToInt(Mathf.Log(descriptionOnly_Layer.value,2));
-        pp_layernum = Mathf.RoundToInt(Mathf.Log(postprocessing_layer.value,2));
     }
 
     private void Update()
@@ -39,43 +32,15 @@ public class RayCastFPS : MonoBehaviour
         ray = new Ray(this.transform.position, this.transform.forward);
         RaycastHit hit;
 
-        //determine if still focused on the previous object
-        if (Physics.Raycast(ray, out hit, rayhitdistance, postprocessing_layer) )
-        {
-            if(hit.transform.gameObject == interacting_object || hit.transform.gameObject == description_object)
-            {
-                object_focused = true;
-            }
-            else
-            {
-                object_focused = false;
-            }
-            
-        }
-        else
-        {
-            object_focused = false;
-        }
 
         //interactable obj
         if (Physics.Raycast(ray, out hit, rayhitdistance, Interactable_Layer))
         {
             interacting_object = hit.transform.gameObject;
-            //change outline postprosessing layer of the selected object
-            //if (interacting_object.layer != pp_layernum)
-            //{
-                //interacting_object.layer = pp_layernum;
-            //}
         }
-
-
         else if (interacting_object != null )//get rid of outline
         {
-            
-                //interacting_object.layer = interact_layernum;
                 interacting_object = null;
-            
-            
         }
 
         //display object name
@@ -114,18 +79,12 @@ public class RayCastFPS : MonoBehaviour
         if (Physics.Raycast(ray, out hit, rayhitdistance, descriptionOnly_Layer))
         {
             description_object = hit.transform.gameObject;
-            //if(description_object.layer != pp_layernum)
-            //description_object.layer = pp_layernum;
         }
         else
         {
             if(description_object != null)
             {
-               
-                    //description_object.layer = description_layernum;
-                    description_object = null;
-               
-                    
+                    description_object = null;      
             }
             
         }

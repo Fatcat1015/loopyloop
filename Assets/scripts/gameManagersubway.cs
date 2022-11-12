@@ -124,8 +124,6 @@ public class gameManagersubway : MonoBehaviour
 
         if (timer >= Light_fell_timer + 5)
         {
-            // Avoid any reload.
-            //Debug.Log("fini");
             Player.GetComponent<Animator>().enabled = false;
         }
 
@@ -152,7 +150,10 @@ public class gameManagersubway : MonoBehaviour
 
     void SceneReset(int index)
     {
+
+        //reset light pos
         Light_Fell = false;
+        LooseLight.GetComponent<Animator>().SetBool("fall", false);
         Player.GetComponent<Animator>().enabled = false;
 
         if (index == 0)
