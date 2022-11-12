@@ -69,6 +69,18 @@ public class RayCastFPS : MonoBehaviour
                 {
                     gm.IceTea.SetActive(true);
                 }
+
+                if (interacting_object.CompareTag("ad"))
+                {
+                    gm.RemoveAD(interacting_object);
+                }
+
+                if (interacting_object.CompareTag("Security Cam"))
+                {
+                    interacting_object.SetActive(false);
+                    interacting_object = null;
+                    gm.Cameras_investigated += 1;
+                }
             }
         }
         else
@@ -93,7 +105,7 @@ public class RayCastFPS : MonoBehaviour
         //see description of objects
         if(description_object != null)
         {
-            crosshair_txt.text = "press E to interact with " + description_object.name;
+            crosshair_txt.text = "press E to look at " + description_object.name;
 
             if (!dm.speaking)
                 {

@@ -6,6 +6,9 @@ TagManager:
   tags:
   - death
   - VM
+  - ad
+  - TrainTracks
+  - Security Cam
   layers:
   - Default
   - TransparentFX

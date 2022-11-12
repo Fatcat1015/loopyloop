@@ -22,11 +22,12 @@ public class gameManagersubway : MonoBehaviour
     public TMP_Text timer_UI;
 
     public bool died = false;
+
     public bool vendingMachine_death = false;
     public bool light_death = false;
-    public bool securityCam_death = false;
     public bool electricity_death = false;
     public bool killer_death = false;
+    public bool securityCam_death = false;
 
     public int death_count = 0;
 
@@ -41,6 +42,9 @@ public class gameManagersubway : MonoBehaviour
     public GameObject ElectrifyToilet;
     public GameObject IceTea;
 
+    public GameObject Ad;
+    public GameObject SecurityCam;
+
     public GameObject Monologues;
 
     public Camera Player_cam;
@@ -49,7 +53,14 @@ public class gameManagersubway : MonoBehaviour
     public bool Light_Fell = false;
     public int Light_fell_timer = 5;
 
+    public int Cameras_investigated = 0;
+
     public bool dead = false; // important *****
+
+    public bool hint_ad = false;
+    public bool hint_securityCam = false;
+    public bool hint_friendPhone = false;
+
 
     private void Start()
     {
@@ -138,6 +149,12 @@ public class gameManagersubway : MonoBehaviour
             LooseLight_trigger.SetActive(false);
         }
 
+        if(Cameras_investigated == 3)
+        {
+            //investigated all cameras
+            hint_securityCam = true;
+        }
+
     }
 
     void player_died()
@@ -194,7 +211,25 @@ public class gameManagersubway : MonoBehaviour
         dm.LoadDialogue(mono);
     }
 
-
+    public void RemoveAD(GameObject ad)
+    {
+        var ad_parent = ad.transform.parent;
+        //reveal option to remove ad
+        if (!hint_ad)
+        {
+            
+            ad_parent.transform.GetChild(0).gameObject.SetActive(false);
+            ad_parent.transform.GetChild(1).gameObject.SetActive(true);
+            hint_ad = true;
+        }
+        else
+        {
+            Ad.SetActive(false);
+            ad_parent.transform.GetChild(1).gameObject.SetActive(false);
+            ad_parent.transform.GetChild(2).gameObject.SetActive(true);
+        }
+        
+    }
 
     //function to quickly reset item description
     void SetDescription(bool death_trigger, GameObject item)
