@@ -35,11 +35,16 @@ public class gameManagersubway : MonoBehaviour
     public GameObject Friend;
     public GameObject Newspaper;
     public GameObject LooseLight;
+    public GameObject LooseLight_description;
     public GameObject LooseLight_trigger;
     public GameObject VendingMachine;
     public GameObject ElectrifyToilet;
+    public GameObject IceTea;
 
     public GameObject Monologues;
+
+    public Camera Player_cam;
+    public Camera Light_cam;
 
     public bool Light_Fell = false;
     public int Light_fell_timer = 5;
@@ -116,16 +121,20 @@ public class gameManagersubway : MonoBehaviour
         if (timer >= Light_fell_timer && !Light_Fell)
         {
             //drop light
+            Light_cam.enabled = true;
+            Player_cam.enabled = false;
             LooseLight.GetComponent<Animator>().SetBool("fall", true);
-            Player.GetComponent<Animator>().enabled = true;
             Light_Fell = true;
+            
             //activate light collider for five seconds
             LooseLight_trigger.SetActive(true);
         }
 
         if (timer >= Light_fell_timer + 5)
         {
-            Player.GetComponent<Animator>().enabled = false;
+            Light_cam.enabled = false;
+            Player_cam.enabled = true;
+
             LooseLight_trigger.SetActive(false);
         }
 
@@ -152,6 +161,10 @@ public class gameManagersubway : MonoBehaviour
 
     void SceneReset(int index)
     {
+        Light_cam.enabled = false;
+        Player_cam.enabled = true;
+        IceTea.SetActive(false);
+        LooseLight_trigger.SetActive(false);
 
         //reset light pos
         Light_Fell = false;
@@ -163,12 +176,11 @@ public class gameManagersubway : MonoBehaviour
 
         }
 
-
         //newspaper - killer
 
         SetDescription(killer_death, Newspaper);
-        SetDescription(light_death, LooseLight);
-
+        SetDescription(light_death, LooseLight_description);
+        SetDescription(vendingMachine_death, VendingMachine);
 
         foreach (Transform child in Friend.transform)
         {
@@ -182,6 +194,9 @@ public class gameManagersubway : MonoBehaviour
         dm.LoadDialogue(mono);
     }
 
+
+
+    //function to quickly reset item description
     void SetDescription(bool death_trigger, GameObject item)
     {
         var set_description_num = death_trigger ? 1 : 0;

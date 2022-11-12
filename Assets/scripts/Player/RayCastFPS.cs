@@ -19,6 +19,7 @@ public class RayCastFPS : MonoBehaviour
 
     public DialogueUI dm;
     public Deathreset dr;
+    public gameManagersubway gm;
 
     private void Update()
     { 
@@ -57,10 +58,16 @@ public class RayCastFPS : MonoBehaviour
                     }
                 }
                 //kill player if its death object
-                if (interacting_object.CompareTag("death"))
+                if (interacting_object.CompareTag("death"))//ice tea death
                 {
                     //killplayer
-                    dm.afterDialogue_die = true;
+                    dr.StartDying();
+                    gm.vendingMachine_death = true;
+                }
+                
+                if (interacting_object.CompareTag("VM"))
+                {
+                    gm.IceTea.SetActive(true);
                 }
             }
         }
@@ -94,6 +101,7 @@ public class RayCastFPS : MonoBehaviour
                 {
                     dm.dialogueLoader = description_object;
                     dm.LoadDialogue(null);
+                    
                 }
                 }
         }
