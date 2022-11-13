@@ -41,6 +41,7 @@ public class gameManagersubway : MonoBehaviour
     public GameObject LooseLight;
     public GameObject LooseLight_description;
     public GameObject LooseLight_trigger;
+    public GameObject lightPos;
     public GameObject VendingMachine;
     public GameObject ElectrifyToilet;
     public GameObject IceTea;
@@ -50,11 +51,10 @@ public class gameManagersubway : MonoBehaviour
 
     public GameObject Monologues;
 
-    public Camera Player_cam;
-    public Camera Light_cam;
+    //public Camera Player_cam;
 
     public bool Light_Fell = false;
-    public int Light_fell_timer = 5;
+    public int Light_fell_timer = 45;
 
     public int Cameras_investigated = 0;
 
@@ -138,23 +138,20 @@ public class gameManagersubway : MonoBehaviour
             dr.resetPos();
         }
 
+        //light
         if (timer >= Light_fell_timer && !Light_Fell)
         {
             //drop light
-            Light_cam.enabled = true;
-            Player_cam.enabled = false;
-            LooseLight.GetComponent<Animator>().SetBool("fall", true);
+            LooseLight.GetComponent<Rigidbody>().isKinematic = false;
+            LooseLight_description.SetActive(false);
             Light_Fell = true;
             
-            //activate light collider for five seconds
+            //activate light collider for 3 seconds
             LooseLight_trigger.SetActive(true);
         }
 
-        if (timer >= Light_fell_timer + 5)
+        if (timer >= Light_fell_timer + 3)
         {
-            Light_cam.enabled = false;
-            Player_cam.enabled = true;
-
             LooseLight_trigger.SetActive(false);
         }
 
@@ -187,14 +184,16 @@ public class gameManagersubway : MonoBehaviour
 
     void SceneReset(int index)
     {
-        Light_cam.enabled = false;
-        Player_cam.enabled = true;
         IceTea.SetActive(false);
+
         LooseLight_trigger.SetActive(false);
+        LooseLight.GetComponent<Rigidbody>().isKinematic = true;
+        LooseLight_description.SetActive(true);
 
         //reset light pos
         Light_Fell = false;
-        LooseLight.GetComponent<Animator>().SetBool("fall", false);
+        LooseLight.transform.position = lightPos.transform.position;
+        LooseLight.transform.rotation = lightPos.transform.rotation;
 
         if (index == 0)//reset scene when initializing not used yet*
         {

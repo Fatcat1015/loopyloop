@@ -6,7 +6,13 @@ public class Deathreset : MonoBehaviour
 {
     public GameObject respawnPos;
     public GameObject blackscreen;
+    public GameObject FPP;
     public gameManagersubway gm;
+
+    private void Start()
+    {
+
+    }
 
     private void OnTriggerEnter(Collider other)
     {
@@ -31,6 +37,7 @@ public class Deathreset : MonoBehaviour
         gameObject.GetComponent<PlayerMovementFPS>().enabled = false;
         blackscreen.SetActive(true);
         gameObject.transform.position = respawnPos.transform.position;
+        FPP.transform.rotation = respawnPos.transform.rotation;
     }
 
     public void resetPos()
