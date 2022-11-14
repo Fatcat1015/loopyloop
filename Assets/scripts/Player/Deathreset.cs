@@ -9,10 +9,7 @@ public class Deathreset : MonoBehaviour
     public GameObject FPP;
     public gameManagersubway gm;
 
-    private void Start()
-    {
-
-    }
+    public GameObject restartPrompt;
 
     private void OnTriggerEnter(Collider other)
     {
@@ -36,6 +33,7 @@ public class Deathreset : MonoBehaviour
     {
         gameObject.GetComponent<PlayerMovementFPS>().enabled = false;
         blackscreen.SetActive(true);
+        StartCoroutine(waitforAudio(gm.audiotime));
         gameObject.transform.position = respawnPos.transform.position;
         FPP.transform.rotation = respawnPos.transform.rotation;
     }
@@ -44,6 +42,14 @@ public class Deathreset : MonoBehaviour
     {
         gm.dead = false;
         blackscreen.SetActive(false);
+        restartPrompt.SetActive(false);
         gameObject.GetComponent<PlayerMovementFPS>().enabled = true;
+    }
+
+    IEnumerator waitforAudio(int time)
+    {
+        yield return new WaitForSeconds(time);
+        gm.dead = true;
+        restartPrompt.SetActive(true);
     }
 }

@@ -11,6 +11,7 @@ public class gameManagersubway : MonoBehaviour
     public float timer = 0;
     public float timer_up = 300;
     public bool initiatedLoop = false;
+    public int audiotime = 3;
 
     public Deathreset dr;
     public DialogueUI dm;
@@ -21,6 +22,7 @@ public class gameManagersubway : MonoBehaviour
     private string  displaySeconds = "";
 
     public TMP_Text timer_UI;
+    public phone p;
 
     public bool died = false;
 
@@ -116,9 +118,18 @@ public class gameManagersubway : MonoBehaviour
 
         //display clock
 
-        timer_UI.text = "12:" + displayMinutes+ ":" +  displaySeconds;
-        
-        
+        if (p.gal_active)
+        {
+            timer_UI.text = " ";
+
+        }
+        else
+        {
+            timer_UI.text = "12:" + displayMinutes + ":" + displaySeconds;
+
+        }
+
+
         //timer reset
 
         if (initiatedLoop)
@@ -185,7 +196,7 @@ public class gameManagersubway : MonoBehaviour
         timer = 0;
         //change dialogues according to the loop
         SceneReset(0);
-        dead = true;
+        //dead = true;
     }
 
     void SceneReset(int index)

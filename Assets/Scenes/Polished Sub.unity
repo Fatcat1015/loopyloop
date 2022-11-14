@@ -1970,7 +1970,7 @@ Mesh:
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_Name: pb_Mesh30078
+  m_Name: pb_Mesh30738
   serializedVersion: 10
   m_SubMeshes:
   - serializedVersion: 2
@@ -2157,8 +2157,7 @@ RectTransform:
   m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
-  m_Children:
-  - {fileID: 1569828534}
+  m_Children: []
   m_Father: {fileID: 380085898}
   m_RootOrder: 4
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -2958,6 +2957,7 @@ RectTransform:
   - {fileID: 1330759168}
   - {fileID: 598524554}
   - {fileID: 290931658}
+  - {fileID: 1569828534}
   m_Father: {fileID: 0}
   m_RootOrder: 25
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -7050,6 +7050,7 @@ MonoBehaviour:
   blackscreen: {fileID: 290931657}
   FPP: {fileID: 673244241}
   gm: {fileID: 1968735636}
+  restartPrompt: {fileID: 1569828533}
 --- !u!1 &985111117
 GameObject:
   m_ObjectHideFlags: 0
@@ -12139,7 +12140,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!224 &1569828534
 RectTransform:
   m_ObjectHideFlags: 0
@@ -12147,13 +12148,13 @@ RectTransform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1569828533}
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
-  m_Father: {fileID: 290931658}
-  m_RootOrder: 0
+  m_Father: {fileID: 380085898}
+  m_RootOrder: 5
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
@@ -15698,10 +15699,12 @@ MonoBehaviour:
   timer: 0
   timer_up: 180
   initiatedLoop: 0
+  audiotime: 3
   dr: {fileID: 965397092}
   dm: {fileID: 1330759169}
   playermove: {fileID: 965397089}
   timer_UI: {fileID: 240262801}
+  p: {fileID: 1296375384}
   died: 0
   vendingMachine_death: 0
   light_death: 0

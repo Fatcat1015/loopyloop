@@ -15,8 +15,8 @@ public class phone : MonoBehaviour
     public GameObject pos1;
     public GameObject pos2;
 
-    [SerializeField] bool phone_active = false;
-    [SerializeField] bool gal_active = false;
+    [SerializeField] public bool phone_active = false;
+    [SerializeField] public bool gal_active = false;
     public bool gal_show = false;
 
     public KeyCode get_phone;
