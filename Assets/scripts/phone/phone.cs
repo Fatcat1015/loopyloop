@@ -71,6 +71,9 @@ public class phone : MonoBehaviour
             gal_show = false;
             my_gallery.GetComponent<Image>().enabled = false;
             GetComponent<Image>().sprite = phoneList[0];
+
+            //disable timer text 
+
         }
 
         //open and close phone
@@ -159,17 +162,6 @@ public class phone : MonoBehaviour
             }
         }
 
-        if (GM.GetComponent<gameManagersubway>().securityCam_death == true)
-        {
-            if (gallery.Contains(Death1))
-            {
-            }
-            else
-            {
-                gallery.Add(Death3);
-                noti_on = true;
-            }
-        }
 
         if (GM.GetComponent<gameManagersubway>().electricity_death == true)
         {

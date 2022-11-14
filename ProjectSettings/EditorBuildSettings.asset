@@ -11,4 +11,7 @@ EditorBuildSettings:
   - enabled: 1
     path: Assets/Scenes/Polished Sub.unity
     guid: ce4d90d7aaa6cc045821a25c8de193f7
+  - enabled: 1
+    path: Assets/Scenes/End.unity
+    guid: bb776ee57b694a348b0ff310ee43632b
   m_configObjects: {}

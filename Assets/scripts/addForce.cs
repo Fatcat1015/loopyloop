@@ -6,7 +6,7 @@ public class addForce : MonoBehaviour
 {
     Rigidbody rb;
     public int forceSpeed = 1;
-    void Start()
+    void Awake()
     {
         rb = GetComponent<Rigidbody>();
     }

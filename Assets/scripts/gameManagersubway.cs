@@ -28,7 +28,6 @@ public class gameManagersubway : MonoBehaviour
     public bool light_death = false;
     public bool electricity_death = false;
     public bool killer_death = false;
-    public bool securityCam_death = false;
 
     public bool canendgame = false;
 
@@ -47,7 +46,7 @@ public class gameManagersubway : MonoBehaviour
     public GameObject IceTea;
 
     public GameObject Ad;
-    public GameObject SecurityCam;
+    public GameObject peekPhone;
 
     public GameObject Monologues;
 
@@ -79,11 +78,18 @@ public class gameManagersubway : MonoBehaviour
             timer_UI = GameObject.Find("Timer").GetComponent<TMP_Text>();
         }
         finalChoice.SetActive(false);
+        peekPhone.SetActive(false);
         SceneReset(1);
     }
 
     void Update()
     {
+
+        if (hint_ad)
+        {
+            peekPhone.SetActive(true);
+        }
+
         if (hint_ad && hint_friendPhone && hint_securityCam)
         {
             canendgame = true;

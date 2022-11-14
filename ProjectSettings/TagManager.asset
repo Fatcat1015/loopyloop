@@ -10,6 +10,7 @@ TagManager:
   - TrainTracks
   - Security Cam
   - Friend
+  - PeekPhone
   layers:
   - Default
   - TransparentFX

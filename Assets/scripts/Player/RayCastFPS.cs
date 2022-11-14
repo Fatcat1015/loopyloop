@@ -70,6 +70,11 @@ public class RayCastFPS : MonoBehaviour
                     gm.IceTea.SetActive(true);
                 }
 
+                if (interacting_object.CompareTag("PeekPhone"))
+                {
+                    gm.hint_friendPhone = true;
+                }
+
                 if (interacting_object.CompareTag("ad"))
                 {
                     gm.RemoveAD(interacting_object);
