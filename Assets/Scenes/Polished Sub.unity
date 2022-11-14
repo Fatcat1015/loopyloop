@@ -338,7 +338,7 @@ MonoBehaviour:
       m_Calls: []
   m_text: 'F to open phone
 
-    G to open gallery
+    Tab to open gallery
 
     Q & E to view the pictures'
   m_isRightToLeft: 0
