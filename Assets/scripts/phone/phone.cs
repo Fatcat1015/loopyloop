@@ -42,6 +42,10 @@ public class phone : MonoBehaviour
 
     public GameObject GM;
 
+    public bool noti_on = false;
+    public GameObject notF;
+
+
     private void Start()
     {
         my_phone.transform.position = pos1.transform.position;
@@ -74,7 +78,9 @@ public class phone : MonoBehaviour
         {
            GetComponent<Image>().sprite = phoneList[1];
             gal_active = true;
-        }else if(Input.GetKeyDown(open_phone) && phone_active == true && gal_active == true)
+            noti_on = false;
+        }
+        else if(Input.GetKeyDown(open_phone) && phone_active == true && gal_active == true)
         {
             GetComponent<Image>().sprite = phoneList[0];
             gal_active = false;
@@ -88,7 +94,7 @@ public class phone : MonoBehaviour
         {
             GetComponent<Image>().sprite = phoneList[2];           
             gal_show = true;
-            
+           
         }
 
         //gallery code
@@ -98,7 +104,7 @@ public class phone : MonoBehaviour
             GalleryControls();
         }
 
-
+        Notificications();
 
         IfIDie();
     }
@@ -135,6 +141,7 @@ public class phone : MonoBehaviour
             else
             {
                 gallery.Add(Death1);
+                noti_on = true;
             }
 
         }
@@ -148,6 +155,7 @@ public class phone : MonoBehaviour
             else
             {
                 gallery.Add(Death2);
+                noti_on = true;
             }
         }
 
@@ -159,6 +167,7 @@ public class phone : MonoBehaviour
             else
             {
                 gallery.Add(Death3);
+                noti_on = true;
             }
         }
 
@@ -170,6 +179,7 @@ public class phone : MonoBehaviour
             else
             {
                 gallery.Add(Death4);
+                noti_on = true;
             }
         }
 
@@ -181,9 +191,23 @@ public class phone : MonoBehaviour
             else
             {
                 gallery.Add(Death5);
+                noti_on = true;
             }
         }
 
+    }
+
+
+    void Notificications()
+    {
+        if (noti_on == true)
+        {
+            notF.GetComponent<Image>().enabled = true;
+        }
+        else if(noti_on == false)
+        {
+            notF.GetComponent<Image>().enabled = false;
+        }
     }
 
 }
