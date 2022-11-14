@@ -249,16 +249,16 @@ public class gameManagersubway : MonoBehaviour
         item.transform.GetChild(set_description_num).gameObject.SetActive(true);
     }
 
-    public void endGame(bool win)
+    public void endGame(bool ready)
     {
-        if (win)
+        if (ready)
         {
-            SceneManager.LoadScene("win_End", LoadSceneMode.Single);
+            SceneManager.LoadScene("End", LoadSceneMode.Single);
         }
         else
         {
-            SceneManager.LoadScene("lose_End", LoadSceneMode.Single);
-
+            finalChoice.SetActive(false);
+            //SceneManager.LoadScene("lose_End", LoadSceneMode.Single);
         }
     }
 }
