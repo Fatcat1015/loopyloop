@@ -67,6 +67,9 @@ public class gameManagersubway : MonoBehaviour
 
     public GameObject finalChoice;
 
+    public AudioSource lightCrash;
+    bool crash = false;
+
     private void Start()
     {
         //initialize
@@ -162,6 +165,7 @@ public class gameManagersubway : MonoBehaviour
             LooseLight.GetComponent<Rigidbody>().isKinematic = false;
             LooseLight_description.SetActive(false);
             Light_Fell = true;
+            crash = true;
             
             //activate light collider for 3 seconds
             LooseLight_trigger.SetActive(true);
@@ -176,6 +180,15 @@ public class gameManagersubway : MonoBehaviour
         {
             //investigated all cameras
             hint_securityCam = true;
+        }
+
+        if(crash)
+        {
+            if(!lightCrash.isPlaying)
+            {
+                lightCrash.Play();
+            }
+            crash = false;
         }
 
     }

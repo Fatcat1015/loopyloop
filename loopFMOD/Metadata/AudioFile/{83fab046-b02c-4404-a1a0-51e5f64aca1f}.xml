@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<objects serializationModel="Studio.02.02.00">
+	<object class="AudioFile" id="{83fab046-b02c-4404-a1a0-51e5f64aca1f}">
+		<property name="assetPath">
+			<value>383654__deleted-user-7146007__electricity.wav</value>
+		</property>
+		<property name="frequencyInKHz">
+			<value>48</value>
+		</property>
+		<property name="channelCount">
+			<value>2</value>
+		</property>
+		<property name="length">
+			<value>8.3000000000000007</value>
+		</property>
+		<relationship name="masterAssetFolder">
+			<destination>{234c1c88-3d08-45f5-a81a-17b461c168b9}</destination>
+		</relationship>
+	</object>
+</objects>

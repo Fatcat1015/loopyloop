@@ -11,6 +11,8 @@ TagManager:
   - Security Cam
   - Friend
   - PeekPhone
+  - Floor
+  - Rail
   layers:
   - Default
   - TransparentFX

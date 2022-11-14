@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<objects serializationModel="Studio.02.02.00">
+	<object class="AudioFile" id="{b5b67993-4c67-4ce5-ae9c-4da8f4d2784a}">
+		<property name="assetPath">
+			<value>OMINOUS_SUBWAY_GLOOMY_CULT_HAHAHAHAYOUAREGONNADIEINLOOPS_BGM_TEST.wav</value>
+		</property>
+		<property name="isStreaming">
+			<value>true</value>
+		</property>
+		<property name="frequencyInKHz">
+			<value>44.0999985</value>
+		</property>
+		<property name="channelCount">
+			<value>2</value>
+		</property>
+		<property name="length">
+			<value>36</value>
+		</property>
+		<relationship name="masterAssetFolder">
+			<destination>{234c1c88-3d08-45f5-a81a-17b461c168b9}</destination>
+		</relationship>
+	</object>
+</objects>

@@ -319,6 +319,7 @@ GameObject:
   - component: {fileID: 696504760}
   - component: {fileID: 696504759}
   - component: {fileID: 696504758}
+  - component: {fileID: 696504761}
   m_Layer: 5
   m_Name: start
   m_TagString: Untagged
@@ -403,6 +404,18 @@ MonoBehaviour:
           m_StringArgument: Polished Sub
           m_BoolArgument: 0
         m_CallState: 2
+      - m_Target: {fileID: 696504761}
+        m_TargetAssemblyTypeName: FMODUnity.triggleAudio, Assembly-CSharp
+        m_MethodName: PlayOneShot
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!114 &696504759
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -441,6 +454,26 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 696504756}
   m_CullTransparentMesh: 1
+--- !u!114 &696504761
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 696504756}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f097d647a27a3414caceccc6456d983d, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  Event:
+    Guid:
+      Data1: 263029551
+      Data2: 1340621426
+      Data3: -584379243
+      Data4: -545722079
+    Path: event:/StartVFX
+  PlayOnAwake: 0
 --- !u!1 &808478461
 GameObject:
   m_ObjectHideFlags: 0

@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<objects serializationModel="Studio.02.02.00">
+	<object class="AudioFile" id="{5b334b89-d508-4f8f-949f-26ccb4ff6b8b}">
+		<property name="assetPath">
+			<value>1879 - Footsteps - Wooden Stairs - Down - 80 fpm - Loop.wav</value>
+		</property>
+		<property name="isStreaming">
+			<value>true</value>
+		</property>
+		<property name="frequencyInKHz">
+			<value>96</value>
+		</property>
+		<property name="channelCount">
+			<value>1</value>
+		</property>
+		<property name="length">
+			<value>30</value>
+		</property>
+		<relationship name="masterAssetFolder">
+			<destination>{234c1c88-3d08-45f5-a81a-17b461c168b9}</destination>
+		</relationship>
+	</object>
+</objects>

@@ -165,7 +165,7 @@ public class phone : MonoBehaviour
 
         if (GM.GetComponent<gameManagersubway>().electricity_death == true)
         {
-            if (gallery.Contains(Death1))
+            if (gallery.Contains(Death4))
             {
             }
             else

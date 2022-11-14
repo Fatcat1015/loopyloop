@@ -21,6 +21,11 @@ public class RayCastFPS : MonoBehaviour
     public Deathreset dr;
     public gameManagersubway gm;
 
+    public AudioSource audioS;
+    public AudioSource drinking;
+    bool drinkAudio = false;
+
+    bool vendingAudio = false;
     private void Update()
     { 
         //actual code
@@ -60,14 +65,17 @@ public class RayCastFPS : MonoBehaviour
                 //kill player if its death object
                 if (interacting_object.CompareTag("death"))//ice tea death
                 {
+                    drinkAudio = true;
                     //killplayer
                     dr.StartDying();
                     gm.vendingMachine_death = true;
+                    Deathreset.teaDeath = true;
                 }
                 
                 if (interacting_object.CompareTag("VM"))
                 {
                     gm.IceTea.SetActive(true);
+                    vendingAudio = true;
                 }
 
                 if (interacting_object.CompareTag("PeekPhone"))
@@ -123,5 +131,19 @@ public class RayCastFPS : MonoBehaviour
                 }
         }
 
+
+        if(vendingAudio)
+        {
+            if(!audioS.isPlaying)
+                audioS.Play();
+            vendingAudio = false;
+        }
+
+        if (drinkAudio)
+        {
+            if (!drinking.isPlaying)
+                drinking.Play();
+            drinkAudio = false;
+        }
     }
 }

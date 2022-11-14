@@ -4,6 +4,7 @@ using UnityEngine;
 
 public class PlayerMovementFPS : MonoBehaviour
 {
+    [Header("basic Functions")]
     public CharacterController cc;
     public float walk_speed = 12f;
     public float run_speed = 50f;
@@ -17,10 +18,14 @@ public class PlayerMovementFPS : MonoBehaviour
     public float groundDistance = 0.04f;
     public LayerMask groundMask;
 
-    public bool isGrounded;
+    public static bool isGrounded;
+
+    
 
     void Update()
     {
+       
+
         isGrounded = Physics.CheckSphere(groundCheck.position, groundDistance, groundMask);
 
         if (Input.GetKey(KeyCode.LeftShift))
@@ -53,6 +58,8 @@ public class PlayerMovementFPS : MonoBehaviour
 
         velocity.y += gravity * Time.deltaTime * 2f;
         cc.Move(velocity * Time.deltaTime);
+
+       
     }
 
     void OnDrawGizmos()
@@ -60,4 +67,6 @@ public class PlayerMovementFPS : MonoBehaviour
         Gizmos.DrawSphere(groundCheck.position, groundDistance);
         
     }
+
+    
 }
