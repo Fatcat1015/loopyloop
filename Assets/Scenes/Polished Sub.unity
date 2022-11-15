@@ -691,7 +691,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_Sprite: {fileID: 21300000, guid: 8223a6cca6497384e967060728fa8341, type: 3}
+  m_Sprite: {fileID: 21300000, guid: 093f095082193ea4cbcfa4747f34f160, type: 3}
   m_Type: 0
   m_PreserveAspect: 0
   m_FillCenter: 1
@@ -1431,12 +1431,12 @@ PrefabInstance:
     - target: {fileID: -8679921383154817045, guid: 14357b687957b794c8494869c5175a53,
         type: 3}
       propertyPath: m_LocalPosition.y
-      value: 20.64
+      value: 18.37
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: 14357b687957b794c8494869c5175a53,
         type: 3}
       propertyPath: m_LocalPosition.z
-      value: 143.63
+      value: 144.36
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: 14357b687957b794c8494869c5175a53,
         type: 3}
@@ -4275,17 +4275,17 @@ PrefabInstance:
     - target: {fileID: -8679921383154817045, guid: 14357b687957b794c8494869c5175a53,
         type: 3}
       propertyPath: m_LocalPosition.x
-      value: -8.38
+      value: -7.13
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: 14357b687957b794c8494869c5175a53,
         type: 3}
       propertyPath: m_LocalPosition.y
-      value: 20.64
+      value: 18.74
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: 14357b687957b794c8494869c5175a53,
         type: 3}
       propertyPath: m_LocalPosition.z
-      value: -143.87997
+      value: -144.82
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: 14357b687957b794c8494869c5175a53,
         type: 3}
@@ -5898,7 +5898,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 794862809}
   m_LocalRotation: {x: -0, y: 0.14945588, z: -0, w: 0.9887684}
-  m_LocalPosition: {x: 9.22, y: 21.94, z: -2.44}
+  m_LocalPosition: {x: 9.22, y: 21.74, z: -2.44}
   m_LocalScale: {x: 1, y: 1, z: 0.79649}
   m_ConstrainProportionsScale: 0
   m_Children:
@@ -6307,7 +6307,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: -0.000030517578, y: 211.99994}
+  m_AnchoredPosition: {x: 0, y: 278.00003}
   m_SizeDelta: {x: 1690.9966, y: 866.4687}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!1 &858824524
@@ -7105,7 +7105,7 @@ MonoBehaviour:
   Names:
   - 
   Dialogues:
-  - '!!!'
+  - '?'
   KillPlayer_afterDialogue: 0
 --- !u!65 &963264057
 BoxCollider:
@@ -8586,7 +8586,7 @@ MonoBehaviour:
   Names:
   - 
   Dialogues:
-  - Freaking light.
+  - Freaking light. Not going near that again.
   KillPlayer_afterDialogue: 0
 --- !u!1 &1102750498
 GameObject:
@@ -9359,7 +9359,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: -788, y: 397.98987}
+  m_AnchoredPosition: {x: -788, y: 418}
   m_SizeDelta: {x: 200, y: 50}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1174161430
@@ -9687,7 +9687,7 @@ Transform:
   - {fileID: 927912605}
   - {fileID: 2055663162}
   m_Father: {fileID: 0}
-  m_RootOrder: 8
+  m_RootOrder: 7
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &1207835577
 GameObject:
@@ -9724,7 +9724,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: -0.000030517578, y: -212.00006}
+  m_AnchoredPosition: {x: 0, y: -146}
   m_SizeDelta: {x: 1690.9966, y: 866.4687}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!1 &1229093837
@@ -10030,7 +10030,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1266309460}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 18.539999, y: 3.67, z: -111.78}
+  m_LocalPosition: {x: 18.07, y: 2.91, z: -113.62}
   m_LocalScale: {x: 0.7, y: 0.7, z: 0.7}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -10065,7 +10065,7 @@ MonoBehaviour:
   Names:
   - 
   Dialogues:
-  - It's broken...
+  - This one's not working...
   KillPlayer_afterDialogue: 0
 --- !u!1 &1287364294
 GameObject:
@@ -10692,7 +10692,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_Sprite: {fileID: 21300000, guid: 8223a6cca6497384e967060728fa8341, type: 3}
+  m_Sprite: {fileID: 21300000, guid: 093f095082193ea4cbcfa4747f34f160, type: 3}
   m_Type: 0
   m_PreserveAspect: 0
   m_FillCenter: 1
@@ -11972,7 +11972,7 @@ Transform:
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 0}
-  m_RootOrder: 6
+  m_RootOrder: 9
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: -60.13}
 --- !u!65 &1496047141
 BoxCollider:
@@ -12007,8 +12007,8 @@ MonoBehaviour:
   Dialogues:
   - ...
   - Huh?
-  - Is that the cult's poster?
-  - '... Now I know why I am dying over and over again... '
+  - That looks like the same symbol on that weird poster.
+  - '... Why is she scrolling through their posts? '
   KillPlayer_afterDialogue: 0
 --- !u!1 &1499025626
 GameObject:
@@ -12121,7 +12121,7 @@ MonoBehaviour:
   Names:
   - 
   Dialogues:
-  - It's a cult poster.
+  - Is this a cult thing? It must be fake...
   KillPlayer_afterDialogue: 0
 --- !u!65 &1506751117
 BoxCollider:
@@ -14245,12 +14245,12 @@ PrefabInstance:
     - target: {fileID: -8679921383154817045, guid: 14357b687957b794c8494869c5175a53,
         type: 3}
       propertyPath: m_LocalPosition.y
-      value: 24.31
+      value: 21.65
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: 14357b687957b794c8494869c5175a53,
         type: 3}
       propertyPath: m_LocalPosition.z
-      value: 30.26001
+      value: 29.58
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: 14357b687957b794c8494869c5175a53,
         type: 3}
@@ -15381,8 +15381,8 @@ MonoBehaviour:
   - 
   - 
   Dialogues:
-  - 'Morbius ring.... '
-  - What's under this sheet?
+  - "M\xF6bius strip.... "
+  - ...There's another poster under this one.
   KillPlayer_afterDialogue: 0
 --- !u!65 &1805051180
 BoxCollider:
@@ -15582,7 +15582,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1819671067}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 0.3199997, y: 0, z: -285.95}
+  m_LocalPosition: {x: 1.42, y: 0.213, z: -288.238}
   m_LocalScale: {x: 0.7, y: 0.7, z: 0.7}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -15617,7 +15617,7 @@ MonoBehaviour:
   Names:
   - 
   Dialogues:
-  - It's broken...
+  - MTA needs to fix this.
   KillPlayer_afterDialogue: 0
 --- !u!1 &1826696916
 GameObject:
@@ -15719,7 +15719,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1853257938}
   m_LocalRotation: {x: 0.0022246537, y: 0.004334066, z: -0.0019566494, w: 0.9999863}
-  m_LocalPosition: {x: 0.0014212028, y: -0.801199, z: -0.01583321}
+  m_LocalPosition: {x: 0.002, y: -0.98, z: -0.015}
   m_LocalScale: {x: 1.0195026, y: 1.0285926, z: 0.8901704}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -17374,7 +17374,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 2095562399}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -8.7, y: 20.64, z: 141.78}
+  m_LocalPosition: {x: -8.7, y: 19.94, z: 142.52}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
@@ -17382,7 +17382,7 @@ Transform:
   - {fileID: 1266309461}
   - {fileID: 1819671068}
   m_Father: {fileID: 0}
-  m_RootOrder: 7
+  m_RootOrder: 6
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &2098087912
 GameObject:
@@ -17528,8 +17528,9 @@ MonoBehaviour:
   Names:
   - 
   Dialogues:
-  - 'I''m stuck in this damn death trap time loop! I need to figure out a way to
-    end it, I am NOT going to stay here forever. '
+  - I'm stuck in this damn death trap time loop! I need to figure out a way to end
+    it.
+  - 'I am NOT going to stay here forever. '
   KillPlayer_afterDialogue: 0
 --- !u!1 &2131980445
 GameObject:
@@ -20949,7 +20950,7 @@ Transform:
   - {fileID: 6164562107772744505}
   - {fileID: 6713066581590576926}
   m_Father: {fileID: 0}
-  m_RootOrder: 9
+  m_RootOrder: 8
   m_LocalEulerAnglesHint: {x: 0, y: 90, z: 0}
 --- !u!4 &543450652514335461
 Transform:

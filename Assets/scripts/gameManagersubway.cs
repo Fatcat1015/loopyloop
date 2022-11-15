@@ -82,6 +82,7 @@ public class gameManagersubway : MonoBehaviour
         {
             timer_UI = GameObject.Find("Timer").GetComponent<TMP_Text>();
         }
+
         finalChoice.SetActive(false);
         peekPhone.SetActive(false);
         SceneReset(1);
@@ -176,11 +177,6 @@ public class gameManagersubway : MonoBehaviour
             LooseLight_trigger.SetActive(false);
         }
 
-        if(Cameras_investigated == 3)
-        {
-            //investigated all cameras
-            hint_securityCam = true;
-        }
 
         if(crash)
         {

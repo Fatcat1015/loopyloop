@@ -90,9 +90,10 @@ public class RayCastFPS : MonoBehaviour
 
                 if (interacting_object.CompareTag("Security Cam"))
                 {
-                    interacting_object.SetActive(false);
-                    interacting_object = null;
-                    gm.Cameras_investigated += 1;
+                    //interacting_object.SetActive(false);
+                    //interacting_object = null;
+                    //gm.Cameras_investigated += 1;
+                    gm.hint_securityCam = true;
                 }
             }
         }
