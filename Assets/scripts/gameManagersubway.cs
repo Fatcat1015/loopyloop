@@ -237,8 +237,16 @@ public class gameManagersubway : MonoBehaviour
         {
             child.gameObject.SetActive(false);
         }
+        if(death_count <= 5)
+        {
+            Friend.transform.GetChild(death_count).gameObject.SetActive(true);
 
-        Friend.transform.GetChild(death_count).gameObject.SetActive(true);
+        }
+        else
+        {
+            Friend.transform.GetChild(5).gameObject.SetActive(true);
+
+        }
 
         var mono = Monologues.transform.GetChild(death_count).gameObject.GetComponent<DialogueLoad>();
         //monologue 
