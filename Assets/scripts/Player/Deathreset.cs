@@ -73,7 +73,7 @@ public class Deathreset : MonoBehaviour
                 lightfallDeath = true;
             }
 
-            if (other.gameObject.name == "electricity") electricDeath = true;
+            if (other.gameObject.name == "electricity") gm.electricity_death = true;
 
         }
 
