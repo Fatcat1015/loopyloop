@@ -30,6 +30,7 @@ public class gameManagersubway : MonoBehaviour
     public bool light_death = false;
     public bool electricity_death = false;
     public bool killer_death = false;
+    public bool train_death = false;
 
     public bool canendgame = false;
 
@@ -146,6 +147,7 @@ public class gameManagersubway : MonoBehaviour
             if (timer >= timer_up)
             {
                 player_died();
+                train_death = true;
             }
             else
             {

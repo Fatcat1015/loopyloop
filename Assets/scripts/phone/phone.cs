@@ -162,6 +162,17 @@ public class phone : MonoBehaviour
             }
         }
 
+        if (GM.GetComponent<gameManagersubway>().train_death == true)
+        {
+            if (gallery.Contains(Death3))
+            {
+            }
+            else
+            {
+                gallery.Add(Death3);
+                noti_on = true;
+            }
+        }
 
         if (GM.GetComponent<gameManagersubway>().electricity_death == true)
         {
