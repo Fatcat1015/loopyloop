@@ -9,7 +9,7 @@ public class Deathreset : MonoBehaviour
     public GameObject FPP;
     public gameManagersubway gm;
 
-    public GameObject restartPrompt;
+    //public GameObject restartPrompt;
     public FMODUnity.Footsteps footstepScript;
     public FMODUnity.runSteps runScript;
     public bool noSteps;
@@ -133,7 +133,6 @@ public class Deathreset : MonoBehaviour
     {
         gm.dead = false;
         blackscreen.SetActive(false);
-        restartPrompt.SetActive(false);
         gameObject.GetComponent<PlayerMovementFPS>().enabled = true;
         footstepScript.enabled = true;
         noSteps = false;
@@ -143,6 +142,5 @@ public class Deathreset : MonoBehaviour
     {
         yield return new WaitForSeconds(time);
         gm.dead = true;
-        restartPrompt.SetActive(true);
     }
 }

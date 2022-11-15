@@ -155,7 +155,6 @@ public class gameManagersubway : MonoBehaviour
 
         if (dead)
         {
-            if(Input.GetKeyDown(KeyCode.R))
             dr.resetPos();
         }
 
@@ -197,7 +196,7 @@ public class gameManagersubway : MonoBehaviour
         death_count += 1;
         died = true;
         //set the state of dialogue w friend
-        if (death_count <=6)
+        if (death_count <=5)
         {
             Friend.transform.GetChild(death_count - 1).gameObject.SetActive(false);
             Friend.transform.GetChild(death_count).gameObject.SetActive(true);
