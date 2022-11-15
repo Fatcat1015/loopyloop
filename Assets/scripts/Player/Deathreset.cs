@@ -96,6 +96,7 @@ public class Deathreset : MonoBehaviour
         runScript.enabled = false;
         noSteps = true;
         StartCoroutine(waitforAudio(gm.audiotime));
+
         gameObject.transform.position = respawnPos.transform.position;
         FPP.transform.rotation = respawnPos.transform.rotation;
 
@@ -106,7 +107,7 @@ public class Deathreset : MonoBehaviour
             audioS.PlayOneShot(chokingClip);
             teaDeath = false;
         }
-        else if (gm.light_death || lightfallDeath)
+        else if (lightfallDeath)
         {
             Debug.Log("Light");
             audioS.PlayOneShot(lightClip);

@@ -47,6 +47,7 @@ public class gameManagersubway : MonoBehaviour
     public GameObject VendingMachine;
     public GameObject ElectrifyToilet;
     public GameObject IceTea;
+    public GameObject teaPos;
 
     public GameObject Ad;
     public GameObject peekPhone;
@@ -203,7 +204,7 @@ public class gameManagersubway : MonoBehaviour
             Friend.transform.GetChild(death_count - 1).gameObject.SetActive(false);
             Friend.transform.GetChild(death_count).gameObject.SetActive(true);
         }
-        timer = 0;
+        timer = -5;
         //change dialogues according to the loop
         SceneReset(0);
         //dead = true;
@@ -221,6 +222,10 @@ public class gameManagersubway : MonoBehaviour
         Light_Fell = false;
         LooseLight.transform.position = lightPos.transform.position;
         LooseLight.transform.rotation = lightPos.transform.rotation;
+
+        IceTea.transform.position = teaPos.transform.position;
+        IceTea.transform.rotation = teaPos.transform.rotation;
+
 
         if (index == 0)//reset scene when initializing not used yet*
         {
