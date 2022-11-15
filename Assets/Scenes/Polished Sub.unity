@@ -10216,7 +10216,7 @@ MonoBehaviour:
   - {fileID: 21300000, guid: be95cdfec96ab9f45bb8bc04c0d0b974, type: 3}
   Death1: {fileID: 21300000, guid: 49cb51c355726684e926de925fe97bd1, type: 3}
   Death2: {fileID: 21300000, guid: a3ab1925c3e23da4f9e98272e153e536, type: 3}
-  Death3: {fileID: 21300000, guid: 3b6d825b271fb3e4b86f86d2239b8a78, type: 3}
+  Death3: {fileID: 21300000, guid: 2d26ec5a62107bb448ed8233ea1e00ee, type: 3}
   Death4: {fileID: 21300000, guid: 3b6d825b271fb3e4b86f86d2239b8a78, type: 3}
   Death5: {fileID: 21300000, guid: c56cd5f8713ff784f90bdbd57ae4e0e3, type: 3}
   GM: {fileID: 1968735635}
@@ -16259,6 +16259,7 @@ MonoBehaviour:
   light_death: 0
   electricity_death: 0
   killer_death: 0
+  train_death: 0
   canendgame: 0
   death_count: 0
   Player: {fileID: 965397088}
@@ -37183,9 +37184,9 @@ GameObject:
   - component: {fileID: 944247922638126109}
   - component: {fileID: 7368409663900875105}
   - component: {fileID: 7368409663900875106}
-  m_Layer: 6
+  m_Layer: 0
   m_Name: light
-  m_TagString: death
+  m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0

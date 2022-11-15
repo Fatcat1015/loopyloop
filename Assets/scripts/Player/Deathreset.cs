@@ -67,7 +67,7 @@ public class Deathreset : MonoBehaviour
                 gm.killer_death = true;
                 laughDeath = true;
             }
-            if (other.gameObject.name == "light trigger")
+            if (other.gameObject.name == "light death")
             {
                 gm.light_death = true;
                 lightfallDeath = true;
