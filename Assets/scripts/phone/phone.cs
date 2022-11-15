@@ -117,14 +117,14 @@ public class phone : MonoBehaviour
     {
         
 
-        if (Input.GetKeyDown(gal_forward) && i < gallery.Count())
+        if (Input.GetKeyDown(gal_forward) && i < gallery.Count() -1)
         {           
             i++;
             my_gallery.GetComponent<Image>().sprite = gallery[i];
         
         }
 
-        if (Input.GetKeyDown(gal_back) && i > 0)
+        if (Input.GetKeyDown(gal_back) && i > 1)
         {
             i--;
             my_gallery.GetComponent<Image>().sprite = gallery[i];
